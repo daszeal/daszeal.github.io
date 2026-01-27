@@ -79,12 +79,15 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+    background-color: #3a3a3a;
 }
 
 .footer-links a {
   margin-left: 1rem;
   color: #ffffff;
   font-size: 0.9rem;
+    text-align: center;
+    background-color: #3a3a3a;
 }
 
 .footer-links a:hover {
