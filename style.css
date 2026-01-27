@@ -67,6 +67,7 @@ background{
     background-color: black;
 }
 footer {
+  padding: 0.5rem;
   border-top: 1px solid #ddd;
   background-color: #000000;
 }
