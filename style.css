@@ -78,7 +78,7 @@ footer {
   margin: 10%;
   display: flex;
   justify-content: space-between;
-  align-items: left;
+  align-items: center;
 }
 
 .footer-links a {
