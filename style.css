@@ -67,16 +67,18 @@ background{
     background-color: black;
 }
 footer {
-  padding: 0.5rem;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
   border-top: 1px solid #ddd;
   background-color: #000000;
+    height: 20%;
 }
 
 .footer-content {
   max-width: 80%;
   margin: 10%;
     margin-left: 1rem
-    margin-right: 1.5rem;
+    margin-right: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,10 +86,10 @@ footer {
 }
 
 .footer-links a {
-  margin-right: 4rem;
+  margin-right: 2rem;
   color: #ffffff;
   font-size: 0.9rem;
-    text-align: center;
+    text-align: right;
     background-color: #000000;
     line-height: 1.5;
 }
