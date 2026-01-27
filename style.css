@@ -83,11 +83,12 @@ footer {
 }
 
 .footer-links a {
-  margin-right: 2rem;
+  margin-right: 4rem;
   color: #ffffff;
   font-size: 0.9rem;
     text-align: center;
     background-color: #000000;
+    spacing: 0.45rem
 }
 
 .footer-links a:hover {
