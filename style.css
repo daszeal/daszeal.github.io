@@ -76,6 +76,7 @@ footer {
 .footer-content {
   max-width: 80%;
   margin: 10%;
+    margin-right: 30%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -88,7 +89,7 @@ footer {
   font-size: 0.9rem;
     text-align: center;
     background-color: #000000;
-    spacing: 0.45rem
+    line-height: 1.5;
 }
 
 .footer-links a:hover {
