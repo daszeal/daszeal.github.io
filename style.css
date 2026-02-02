@@ -139,3 +139,9 @@ footer {
     text-decoration: underline;
     text-decoration: bold;
 }
+
+.responsive-img{
+    width: 20%;
+    height: auto;
+    align: left;
+}
