@@ -6,8 +6,8 @@ title: Posts
 <h1>Some posts I made</h1>
 <ul>
 {% for post in site.posts %}
-  <li class="post-links">
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  <li>
+    <a href="{{ post.url | relative_url }}" class="post-links">{{ post.title }}</a>
   </li>
 {% endfor %}
 </ul>
