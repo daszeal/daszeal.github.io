@@ -23,9 +23,12 @@
     <h3>About me</h3>
   </a>
 
-  <a href="{{ '/posts/' | relative_url }}" class="card">
-    <h3>Most recent post</h3>
+{% for post in site.posts limit:1 %}
+  <a href="{{ post.url | relative_url }}" class="card">
+    <h2>Latest Post</h2>
+    <p>{{ post.title }}</p>
   </a>
+{% endfor %}
 
   <div class="card status-card">
     <h3>Status</h3>
