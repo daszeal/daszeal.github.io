@@ -169,6 +169,7 @@ footer {
   padding: 1rem 2rem;
   border: 1px solid white;
   border-radius: 10px;
+  margin: 0.5rem;
 }
 .card-grid {
   display: grid;
