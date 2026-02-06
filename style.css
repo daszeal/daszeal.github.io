@@ -270,3 +270,27 @@ footer {
   transform: none;
   animation: none;
 }
+
+.error-page {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  gap: 1rem;
+}
+
+.error-page h1 {
+  font-size: 6rem;
+  opacity: 1;
+}
+
+.error-page .btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  text-decoration: none;
+}
