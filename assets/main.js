@@ -21,9 +21,7 @@ const observer = new IntersectionObserver(entries => {
   });
 });
 
-
-document.querySelectorAll('.reveal').forEach(el => {
+document.querySelectorAll('.reveal, .fade-in').forEach(el => {
   observer.observe(el);
 });
 
-document.querySelectorAll('[data-animate]')
