@@ -171,6 +171,11 @@ footer {
   gap: 2rem;
 }
 
+.card-grid:hover{
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
 .about-content {
     text-align: left;
     color: white;
@@ -245,3 +250,12 @@ footer {
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.3s; }
 .delay-3 { animation-delay: 0.5s; }
+
+.logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
