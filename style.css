@@ -213,6 +213,11 @@ footer {
     font-weight: 400;
     font-style: normal;
     background-color: black;
+
+.posts-links a {
+    margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .date {
     text-align: center;
