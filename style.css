@@ -265,8 +265,8 @@ footer {
   transform: translateY(0) scale(1.05);
 }
 
-.no-js .reveal,
-.no-js .fade-in {
+.no-js .fade-in,
+.no-js .reveal {
   opacity: 1;
   transform: none;
   animation: none;
