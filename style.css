@@ -259,6 +259,7 @@ footer {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+
 .reveal {
   opacity: 0;
   transform: translateY(30px);
