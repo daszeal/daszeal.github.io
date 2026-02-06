@@ -171,7 +171,7 @@ footer {
   gap: 2rem;
 }
 
-.card-grid:hover{
+.card:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
@@ -237,7 +237,12 @@ footer {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeUp 0.8s ease-out forwards;
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeUp {
