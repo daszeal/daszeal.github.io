@@ -279,8 +279,4 @@ footer {
 .card:hover {
   transform: translateY(0) scale(1.05);
 }
-.no-js .reveal,
-.no-js .fade-in {
-  opacity: 1;
-  transform: none;
-}
+
