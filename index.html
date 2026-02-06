@@ -13,23 +13,23 @@ title: Home
 
 <section class="card-grid">
 
-  <a href="{{ '/about/' | relative_url }}" class="card">
+  <a href="{{ '/about/' | relative_url }}" class="card reveal">
     <h3>About me</h3>
   </a>
 
 {% for post in site.posts limit:1 %}
-  <a href="{{ post.url | relative_url }}" class="card">
+  <a href="{{ post.url | relative_url }}" class="card reveal">
     <h3>Latest Post</h3>
     <p>{{ post.title }}</p>
   </a>
 {% endfor %}
 
-  <div class="card status-card">
+  <div class="card status-card reveal">
     <h3>Status</h3>
     <p>idk bro this is a test</p>
   </div>
   
-  <a href="https://en.wikipedia.org/wiki/Help:IPA/English" class="card">
+  <a href="https://en.wikipedia.org/wiki/Help:IPA/English" class="card reveal">
     <h3>Pronounce my name</h3>
     <p>/ˈdas͡ziːl/</p>
   </a>
