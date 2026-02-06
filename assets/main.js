@@ -14,9 +14,12 @@ status.textContent = "IT'S FINALLY WORKINGGG";
 fetch("https://daszeal.github.io/posts/feed.xml")
 
 document.addEventListener("DOMContentLoaded", () => {
-
+    initAnimations();
+  setTimeout(initAnimations, 100);
+  });
 
 function initAnimations() {
+
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
