@@ -12,4 +12,3 @@ title: Posts
 {% endfor %}
 </ul>
 <br>
-<br>
