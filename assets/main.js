@@ -13,10 +13,6 @@ document.querySelectorAll('.card').forEach(card => {
 
 const status = document.querySelector('.status-card p');
 
-if (status) {
-  status.textContent = "IT'S FINALLY WORKINGGG";
-}
-
 function initAnimations() {
 
   // Fade in on load
