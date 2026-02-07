@@ -60,7 +60,7 @@ where n is the throttle of the engine(s), a unit-less number between 0 (engine c
 
 For practicality’s sake, specific engines, thrusts, and masses will not be used to model this experiment. Rather, we use different *TWR*s to simulate the net acceleration available to the spacecraft regardless of size (For the same reason, we chose to not model drag coefficients for atmospheric reentry simulations.).
 
-## Results
+### Results
 Using the equations we derived earlier, we can plot the graph of the altitude vs. the descending velocity of various *TWR*s using Python, as shown in Figure 1. This will be helpful for determining how much we should throttle given the current height and velocity of the vehicle. 
 
 For this case, the *TWR*s of 1.5, 2, 2.5, and 3 were used, with 5 being an additional realistic structural limit and 10 being the theoretical limit, mainly used to help identify if the vehicle is beyond recovery. 
