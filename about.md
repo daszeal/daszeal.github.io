@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-<main class="about-content fade-in">
-
-# About
+<body>
+  <h1>About</h1>
+  <main class="about-content fade-in">
 
 Hi there!
 
@@ -25,4 +25,6 @@ I am not a professional coder nor have a good understanding of how websites work
 My main points of contact are in the footer links. I am most active on X ([@ddaszeal](https://x.com/ddaszeal)), regularly posting about current updates, personal or engineering-related. All my full works will be on this site, however.
 
 SpaceX follower. Space Shuttle lover. Ad astra 🚀
-</main>
+
+  </main>
+</body>
