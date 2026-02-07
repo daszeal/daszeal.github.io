@@ -13,24 +13,29 @@ title: Home
 
 <section class="card-grid delay-3">
 
-  <a href="{{ '/about/' | relative_url }}" class="card reveal">
+  <a href="{{ '/about/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/seal.jpg')">
     <h3>About me</h3>
     <p>The owner of this website, that is.</p>
   </a>
 
 {% for post in site.posts limit:1 %}
-  <a href="{{ post.url | relative_url }}" class="card reveal">
+  <a href="{{ post.url | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/twrgraph.png')">
     <h3>Latest Post</h3>
     <p>{{ post.title }}</p>
   </a>
 {% endfor %}
   
-  <a href="https://en.wikipedia.org/wiki/Help:IPA/English" class="card reveal">
+  <a href="https://en.wikipedia.org/wiki/Help:IPA/English" class="card reveal centered">
     <h3>Pronounce my name</h3>
     <p>/ˈdas͡ziːl/</p>
   </a>
 
-  <div class="card status-card reveal">
+  <a href="{{ '/posts/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/falcon9landing.jpg')">
+  <h3>All Posts</h3>
+  <p>Click to read</p>
+  </a>
+
+  <div class="card status-card reveal centered">
     <h3>Status</h3>
     <p>{{ site.data.status.text }}</p>
   </div>
