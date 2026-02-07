@@ -167,14 +167,34 @@ footer {
 }
 
 .card {
-  padding: 1rem 2rem;
-  border: 1px solid white;
-  border-radius: 10px;
+  position: relative;
+
+  height: 320px; /* adjust later */
+  padding: 1.5rem;
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background: rgba(0,0,0,0.4);
+
+  transition: transform 0.25s ease,
+              filter 0.25s ease,
+              box-shadow 0.25s ease;
 }
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .card:hover {
