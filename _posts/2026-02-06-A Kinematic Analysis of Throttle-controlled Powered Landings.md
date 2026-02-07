@@ -2,10 +2,7 @@
 layout: post
 title: A Kinematic Analysis of Throttle-controlled Powered Landings
 ---
-### Abstract
-In order to land a spacecraft without the use of parachutes,(I.e., if entering an atmosphere) one must begin a retrograde landing burn such that the vehicle reaches a velocity of or near zero as it touches the ground. As neither altitude nor falling velocity, the main determining factors to the ideal landing burn, are easily controllable without wasting precious fuel, we have to rely on throttle control to avoid a catastrophic kinetic interaction with the ground. We thereby created a graphical algorithm by plotting the altitude as a function of velocity for landing burns of different thrust-to-weight ratios (*TWR*), which helps determine both the feasibility envelope and the throttle percentage to make the perfect landing burn at that moment in time. This study demonstrates that after evaluating a vehicle’s instantaneous velocity and altitude, we must adjust the engine(s) throttle such that its optimal descent line on the altitude vs. velocity graph, determined by the spacecraft’s *TWR*, intersects point formed by those two values, hereinafter termed the state vector as ($$v$$ , $$h$$). This will ensure the most optimal landing, and we can also mathematically determine the throttle percentage by rearranging the landing burn algorithm above.
 
-### Introduction
 SpaceX, NASA, Blue Origin, and many other aerospace agencies have all nearly perfected the suicide burn: a landing maneuver where a spacecraft fires its landing engines at the last possible moment so that vertical velocity reaches zero as it touches the ground, requiring the simultaneous management of altitude, fuel, and vertical velocity. This, however, requires the precise calculations done almost instantly by flight computers, presenting a problem when such resources are limited. In this article, we will provide a solution to this problem: a simple algorithm that can be used to calculate parameters for a rapidly descending vehicle given its velocity and altitude at the predefined re-ignition window, helping to set the baseline reference for flight control computers.
 
 ### Model
