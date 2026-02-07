@@ -3,8 +3,10 @@ layout: default
 title: About
 permalink: /about/
 ---
-<h1>About</h1>
-  <main class="about-content fade-in">
+
+<main class="about-content fade-in">
+
+# About
 
 Hi there!
 
@@ -14,7 +16,7 @@ I focus mainly on modeling and self-teaching astronautical engineering/rocketry 
 
 Most of my posts on this site will be sharing some of my findings or learnings, though I may throw in some random physics, astronomy, or gaming related topics that I find interesting. 
 
-I usually post pics of my progress in stock Kerbal Space Program.
+I usually post pics of my progress in stock Kerbal Space Program, but might throw in some other things. 
 
 Also a Minecraft 1.9+ PvPer, untested, main gamemodes being Vanilla/Crystal and SMP.
 
@@ -22,6 +24,5 @@ I am not a professional coder nor have a good understanding of how websites work
 
 My main points of contact are in the footer links. I am most active on X ([@ddaszeal](https://x.com/ddaszeal)), regularly posting about current updates, personal or engineering-related. All my full works will be on this site, however.
 
-SpaceX follower. Space Shuttle lover. Ad astra.
-
-  </main>
+SpaceX follower. Space Shuttle lover. Ad astra 🚀
+</main>
