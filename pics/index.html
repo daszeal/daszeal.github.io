@@ -9,7 +9,7 @@ title: Pics
 
   {% for photo in site.pics %}
 
-    <a href="{{ photo.url }}" class="photo-card">
+    <a href="{{ photo.url | relative_url }}" class="photo-card">
 
       <img
         src="{{ photo.image }}"
