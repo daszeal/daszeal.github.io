@@ -12,6 +12,8 @@ I focus mainly on modeling and self-teaching astronautical engineering/rocketry 
 
 Most of my posts on this site will be sharing some of my findings or learnings, though I may throw in some random physics, astronomy, or gaming related topics that I find interesting. 
 
+I usually post pics of my progress in stock Kerbal Space Program.
+
 Also a Minecraft 1.9+ PvPer, untested, main gamemodes being Vanilla/Crystal and SMP.
 
 I am not a professional coder nor have a good understanding of how websites work. If something weird happens when you're browsing don't be that surprised.
