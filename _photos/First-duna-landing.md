@@ -1,7 +1,7 @@
 ---
 layout: photo
 title: First Duna Landing
-image: assets/photos/Duna landing.png
+image: assets/photos/Dunalanding.png
 date: 2026-02-07
 description: Kerbals standing outside Duna Ascent Vehicle.
 ---
