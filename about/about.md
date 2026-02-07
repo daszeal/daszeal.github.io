@@ -9,7 +9,7 @@ I’m Peter Jiang, a high school student based in Virginia that goes by the onli
 
 I focus mainly on modeling and self-teaching astronautical engineering/rocketry using kinematic theory then testing my results in Kerbal Space Program. Some of my current goals are to perfect a model that can be used for launch vehicle reusability and spacecraft descent. All my theories are self-derived unless stated otherwise (via references or widely-known theorems).
 
-Most of my posts on this site will be sharing some of my findings or learnings, though I may throw in some random physics, astronomy or gaming related topics that I find interesting. 
+Most of my posts on this site will be sharing some of my findings or learnings, though I may throw in some random physics, astronomy, or gaming related topics that I find interesting. 
 
 Also a Minecraft 1.9+ PvPer, untested, main gamemodes being Vanilla/Crystal and SMP.
 
