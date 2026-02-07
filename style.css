@@ -306,6 +306,9 @@ footer {
   font-size: 0.9rem;
   opacity: 1;
 }
+.caption p {
+    text-align: center;
+}
 
 .post-image {
   max-width: 50%;
