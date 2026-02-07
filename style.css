@@ -301,8 +301,16 @@ footer {
   text-decoration: none;
 }
 
-.figure {
-  margin: 2rem 0;
+.caption {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 1;
+}
+
+.post-image {
+  max-width: 50%;
+  display: block;
+  margin: 2rem auto;
 }
 
 .post-content ul,
