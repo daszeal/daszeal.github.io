@@ -415,3 +415,71 @@ footer {
 .status-card {
   pointer-events: none;
 }
+
+/* Grid */
+
+.photo-grid {
+  max-width: 1200px;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Cards */
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 280px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Hover */
+
+.photo-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    transparent
+  );
+
+  color: white;
+}
+
+/* Individual page */
+
+.photo-page {
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.photo-full {
+  width: 100%;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.photo-desc {
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
