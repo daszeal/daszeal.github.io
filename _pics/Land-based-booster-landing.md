@@ -1,7 +1,7 @@
 ---
 layout: photo
 title: Land Based Booster Landing
-image: assets/photos/Land-basedboosterlanding.png
+image: /assets/photos/Land-basedboosterlanding.png
 date: 2026-02-07
 description: Booster touching down in Mlorba, Kerbin.
 ---
