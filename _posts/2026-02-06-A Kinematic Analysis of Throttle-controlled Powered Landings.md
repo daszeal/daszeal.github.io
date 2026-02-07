@@ -70,12 +70,16 @@ For this case, the *TWR*s of 1.5, 2, 2.5, and 3 were used, with 5 being an addit
   </p>
 </div>
 
-### Discussion
+### Discussion of results
 Shown by Figure 1, as altitude decreases and velocity increases, higher *TWR*s will be needed to successfully land the craft.
 We can use this graph to determine our throttle range for a vehicle given its velocity and altitude. 
+
 If the state vector lies on the left side of a descending craft’s *TWR* landing line, then the craft will be able to cut all its velocity before reaching an altitude of 0 if engines are fired immediately. However, since this will result in the craft reaching a hover point above ground and wasting fuel, we should throttle down the engines such that the spacecraft is able to reach the target velocity as its altitude reaches zero instead.
+
 Using the same method of analysis, if the point lies on the right side of a *TWR* line, then the craft is moving too fast for its altitude to be able to decelerate in the altitude provided. It is empirical that we should throttle up immediately or reignite additional engines. If the *TWR* line used is the craft’s maximum *TWR*, then a high-velocity impact with the ground is inevitable. 
+
 The most optimal landing is for the vehicle to adjust the engine throttle such that its *TWR*’s optimal landing line crosses its current velocity vector perfectly. In this scenario, firing the engines at that point in time will slow the rocket down to 0 in precisely the altitude given.
+
 By rearranging the throttle control equation we derived earlier, we reach a specific algorithm that determines the immediate throttle based off of the vehicle’s state vector, 
 
 $$
@@ -84,7 +88,7 @@ $$
 
 To ensure a safe and fuel-efficient descent, the on-board flight control system should adjust the throttle to that $$n$$ value, such that the vehicle’s state vector lies tangent to that *TWR*’s optimal landing burn line.
 
-### Conclusion
+### Conclusion and limitations
 In this model, a low-throttle, high-altitude burn is kinematically equivalent to a full-throttle, low-altitude burn. In reality, liquid-based rocket engines have a minimum throttle limit, which will prevent high-altitude landing burns from taking place. In addition, a higher altitude increases gravity losses of fuel, making it less fuel-efficient than a burn starting at a lower altitude. 
 
 In contrast, a low-altitude burn increases the chance of the craft crossing its maximum *TWR*’s optimal descent line and resulting in a crash. 
