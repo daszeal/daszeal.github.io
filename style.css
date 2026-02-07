@@ -319,11 +319,13 @@ footer {
 .post-content ul,
 .post-content ol {
   padding-left: 1.2em;
-  margin-left: 0;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-bottom: 1.2em;
 }
 
 .post-content li {
-  margin-bottom: 0.4em;
+  margin-bottom: 0.2em;
   line-height: 1.6;
 }
+
