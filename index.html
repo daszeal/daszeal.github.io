@@ -34,17 +34,17 @@ title: Home
     <h3>Status</h3>
     <p>{{ site.data.status.text }}</p>
   <a>
+  
+  <a href="{{ '/pics/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/falcon9landing.png')"> 
+    <h3>Pics</h3>
+    <p>Random moments</p>
+  </a>
 
   <a class="card centered status-card reveal" href="#"> 
     <h3>Now</h3>
     <p>Reading: {{ site.data.now.reading }}</p>
     <p>Learning: {{ site.data.now.learning }}</p>
     <p>KSP: Landing boosters, preparing for Laythe mission</p>
-  </a>
-
-  <a href="{{ '/pics/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/falcon9landing.png')"> 
-    <h3>Pics</h3>
-    <p>Random moments</p>
   </a>
 
 </section>
