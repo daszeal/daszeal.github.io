@@ -13,13 +13,13 @@ title: Home
 
 <section class="card-grid delay-3">
 
-  <a href="{{ '/about/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/snow.HEIC')">
+  <a href="{{ '/about/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/snow.HEIC')">
     <h3>About me</h3>
     <p>The owner of this website, that is.</p>
   </a>
 
 {% for post in site.posts limit:1 %}
-  <a href="{{ post.url | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/twrgraph.png')">
+  <a href="{{ post.url | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/twrgraph.png')">
     <h3>Latest Post</h3>
     <p>{{ post.title }}</p>
   </a>
@@ -30,7 +30,7 @@ title: Home
     <p>/ˈdas͡ziːl/</p>
   </a>
 
-  <a href="{{ '/posts/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/falcon9landing.jpg')">
+  <a href="{{ '/posts/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/falcon9landing.jpg')">
   <h3>All Posts</h3>
   <p>Click to read</p>
   </a>
