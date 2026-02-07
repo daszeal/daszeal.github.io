@@ -6,4 +6,4 @@ date: 2026-02-07
 description: Falcon 9 Stage 1 landing on droneship
 ---
 
-Test
+Test photo. Not taken by me. Credit: Wikipedia
