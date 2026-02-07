@@ -1,6 +1,6 @@
 ---
 layout: photo
-title: Booster 1 Touchdown
+title: Blue Space Transfer Vehicle to Jool
 image: assets/photos/BlueSpaceTransferVehicletoJool.png
 date: 2026-02-07
 description: Blue Space assembled in Low Kerbin Orbit.
