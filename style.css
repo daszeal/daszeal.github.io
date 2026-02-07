@@ -184,12 +184,24 @@ footer {
               box-shadow 0.25s ease;
 }
 .card-grid {
-  max-width: 1200px;   /* keeps it centered */
+  max-width: 1200px;
   margin: 3rem auto;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
+}
+
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card:hover {
