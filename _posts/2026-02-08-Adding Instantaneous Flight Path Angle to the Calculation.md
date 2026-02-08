@@ -51,7 +51,9 @@ For new variables,
 We can model the spacecraft’s projected trajectory with a parabolic trajectory on a Cartesian plane with the $$x$$ and $$y$$ axes being the horizontal and vertical positions of it. The constant is the spacecraft’s altitude at the start of the landing burn, and the $$y$$ value of the function’s vertex is the trajectory’s apoapsis. From comparing the horizontal and vertical velocities, we can determine that the slope of this function is the cotangent of the spacecraft’s angle.
 
 $$\frac{dy}{dx} = \frac{v_y}{v_x}$$
+
 $$\gamma = tan^{-1}(\frac{v_x}{v_y})$$
+
 $$\frac{dy}{dx} = cot(\gamma)$$
 
 This value will function like the graph from earlier to determine the feasibility envelope of landing at a certain site. The $$\gamma$$ value must be greater than the angle to the targeted landing site ($$\theta$$), as a retrograde burn will decrease the horizontal velocity of the craft.
@@ -59,6 +61,7 @@ This value will function like the graph from earlier to determine the feasibilit
 We will also model the spacecraft’s powered descent using a Cartesian plane. To determine the $$d$$ value, we must first determine what this function is. 
 
 $$y_{powered} = ax^2+bx+c$$
+
 $$y_{powered}’ = 2ax+b$$
 
 Where $$a$$ is the variable descent rate we have to calculate, $$b$$ is the slope of the function at $$x=0$$ (determined through $$cot(\gamma)$$), and $$c$$ is $$h_burn$$. 
@@ -66,11 +69,13 @@ Where $$a$$ is the variable descent rate we have to calculate, $$b$$ is the slop
 The $$a$$ value can be determined by plugging in a second coordinate, in this case being the landing site at $$(x_target,0)$$.
 
 $$a = \frac{y_2 - b(x_2) - c}{(x_2)^2}$$
+
 $$a = \frac{0 - cot(\gamma)(x_{target}) - h_burn}{(x_{target})^2}$$
 
 The final variable we have to solve for it $$x_target$$, the downrange distance to our landing zone. This can be found in a number of ways, such as radar, but can also be calculated by multiplying the altitude to the tangent of the angle to the landing site.
 
 $$tan(\theta) = \frac{x_{target}}{h_{burn}}
+
 $$x_{target} = h_{burn}tan(\theta)
 
 Using the formula for arc length,
