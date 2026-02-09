@@ -88,7 +88,7 @@ $$d = \int_{0}^{x_{target}} \sqrt{1 + (2ax+cot(\gamma))^2} \, dx$$
 
 By plugging that result into the equation we derived in the earlier post,
 
-$$d = \int_{0}^{x_{target}} \sqrt{1 + (2ax+cot(\gamma))^2} \, dx = \frac{v_{burn}^2}{2(n\frac{F_{Thrust}}{m}g-g}$$)
+$$\int_{0}^{x_{target}} \sqrt{1 + (2ax+cot(\gamma))^2} \, dx = \frac{v_{burn}^2}{2(n\frac{F_{Thrust}}{m}g-g}$$)
 
 And solving for the $$n$$ value, we can conclude a better throttle value for our landing burn engines.
 
