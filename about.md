@@ -20,7 +20,7 @@ Also a Minecraft 1.9+ PvPer, untested, main gamemodes being Vanilla/Crystal and 
 
 I am not a professional coder nor have a good understanding of how websites work. If something weird happens when you're browsing don't be that surprised.
 
-All my work is and will be licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This mean's you're free to copy, redistribute, and build upon them as long as you give credit to it.
+All my work is and will be licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This means you're free to copy, redistribute, and build upon them as long as you give credit to it.
 
 My main points of contact are in the footer links. I am most active on X ([@ddaszeal](https://x.com/ddaszeal)), regularly posting about current updates, personal or engineering-related. All my full works will be on this site, however.
 
