@@ -20,25 +20,6 @@ function initAnimations() {
     el.classList.add("visible");
   });
 
-  // Scroll reveal
-  if (!("IntersectionObserver" in window)) {
-    document.querySelectorAll(".reveal").forEach(el => {
-      el.classList.add("visible");
-    });
-    return;
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // animate once
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
   document.querySelectorAll(".reveal").forEach(el => {
     observer.observe(el);
   });
