@@ -1,20 +1,18 @@
-let revealed = false;
-
 document.addEventListener("scroll", () => {
 
-  if (revealed) return;
+  const triggerPoint = window.innerHeight * 0.8;
+  const cardsSection = document.querySelector(".home-cards");
 
-  const cards = document.querySelector(".home-cards");
+  if (!cardsSection) return;
 
-  if (!cards) return;
+  const top = cardsSection.getBoundingClientRect().top;
 
-  if (cards.getBoundingClientRect().top < window.innerHeight * 0.8) {
+  if (top < triggerPoint) {
 
     document
       .querySelectorAll(".reveal")
       .forEach(el => el.classList.add("visible"));
 
-    revealed = true;
   }
 
 });
