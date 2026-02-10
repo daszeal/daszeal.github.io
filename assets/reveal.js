@@ -1,6 +1,6 @@
 document.addEventListener("scroll", () => {
 
-  if (window.scrollY > 700) {
+  if (window.scrollY > 1400) {
 
     document
       .querySelectorAll(".reveal")
