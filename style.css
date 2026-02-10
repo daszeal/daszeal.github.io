@@ -485,10 +485,10 @@ footer {
   opacity: 0.8;
   margin-bottom: 2rem;
 }
+
 .post-nav {
   text-align: center;
   display: flex;
-  flex-direction: row; /* Stacks paragraphs vertically */
-  gap: 1em;
-  margin: 1em;
+  flex-direction: column;
 }
+
