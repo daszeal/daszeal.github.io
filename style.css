@@ -535,7 +535,7 @@ footer {
   display: flex;
   flex-direction: column;
 }
-logo {
+.logo {
     width: 20%;
     height: auto;
     align: left;
