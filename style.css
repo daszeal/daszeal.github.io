@@ -615,3 +615,133 @@ footer {
   }
 
 }
+
+/* =========================
+   PROJECT PAGE
+========================= */
+
+.project-page {
+  max-width: 850px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.project-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Status badges */
+
+.project-status,
+.project-card-meta span:last-child {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-planned {
+  background: rgba(255,255,255,0.1);
+  color: #aaa;
+}
+
+.status-active {
+  background: rgba(0,255,150,0.15);
+  color: #3cffb2;
+}
+
+.status-finished {
+  background: rgba(0,150,255,0.15);
+  color: #66bfff;
+}
+
+/* Content */
+
+.project-content {
+  line-height: 1.7;
+  margin-top: 1.5rem;
+}
+
+/* Empty State */
+
+.project-empty {
+  text-align: center;
+  margin: 4rem 0;
+  opacity: 0.85;
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-sub {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
+
+/* =========================
+   PROJECT LIST
+========================= */
+
+.project-list-section {
+  max-width: 1100px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+}
+
+.project-list-section h2 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  display: block;
+
+  padding: 1.5rem;
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  text-decoration: none;
+  color: inherit;
+
+  transition: all 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+.project-card h3 {
+  margin-bottom: 0.6rem;
+}
+
+.project-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
