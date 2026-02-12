@@ -745,3 +745,21 @@ footer {
   font-size: 0.8rem;
   opacity: 0.8;
 }
+/* Back link */
+
+.project-back {
+  max-width: 850px;
+  margin: 2rem auto 4rem;
+  padding: 0 2rem;
+}
+
+.project-back a {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.project-back a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
