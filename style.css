@@ -58,7 +58,6 @@ a{
     text-decoration: underline;
 }
 a:hover{
-    text-decoration: bold; 
     text-decoration: underline;
     font-weight:500;
 }
@@ -96,7 +95,6 @@ footer {
 .footer-links a:hover {
   color: #ffffff;
     text-decoration: underline;
-    text-decoration: bold;
 }
 
 .site-header {
