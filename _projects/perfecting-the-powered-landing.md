@@ -29,6 +29,7 @@ Plain English: Finding how to land falling things using rocket engines, [example
 - [**Post** - A Kinematic Analysis of Throttle-controlled Powered Landings](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/)
 - [**Post** - Adding Instantaneous Flight Path Angle to the Calculation](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/)
 - [**Photo** - Simulation of atmospheric descent for large vehicles](https://daszeal.github.io/pics/booster-landing-burn/)
+- [**Photo** - Simulation of vacuum descent for a test probe](https://daszeal.github.io/pics/simulation-landing-gamma/)
 
 ### Future Plans
 - Include mass changes during the landing burn;
