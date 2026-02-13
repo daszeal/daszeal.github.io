@@ -330,10 +330,10 @@ footer {
 .reveal {
   opacity: 0;
   transform: translateY(40px) scale(0.95);
-
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
+  will-change: opacity, transform;
 }
 
 .reveal.visible {
