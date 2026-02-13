@@ -25,11 +25,14 @@ function initAnimations() {
   });
 }
 
-// Run when page loads
-window.addEventListener("load", initAnimations);
+let animationsInitialized = false;
 
-// Run when coming back via cache
-window.addEventListener("pageshow", initAnimations);
+function safeInit() {
+  if (animationsInitialized) return;
+  animationsInitialized = true;
+  initAnimations();
+}
 
+window.addEventListener("load", safeInit);
 
 
