@@ -14,8 +14,8 @@ Developing a simple yet effective solution to performing the suicide burn (terme
 - Enabling development of flight computers for more spacecraft capable of powered landing, on Earth or on other celestial bodies
 
 ### Timeline
-- Jan. 2026: Initiated project, ran simple derivations assuming minimal horizontal velocity
-- Feb. 2026: Improved on given limitations, including correcting to include horizontal momentum (calculated via flight path angle)
+- **Jan. 2026** - Initiated project, ran simple derivations assuming minimal horizontal velocity
+- **Feb. 2026** - Improved on given limitations, including correcting to include horizontal momentum (calculated via flight path angle)
 
 ### Outputs
 - 1 draft paper in Overleaf
@@ -24,12 +24,11 @@ Developing a simple yet effective solution to performing the suicide burn (terme
 - Multiple KSP atmospheric booster landing attempts (no calculations applied)
 
 ### Links
-- [Post: A Kinematic Analysis of Throttle-controlled Powered Landings](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/)
-- [Post: Adding Instantaneous Flight Path Angle to the Calculation](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/)
-- [Photo: Simulation of atmospheric descent for large vehicles](https://daszeal.github.io/pics/booster-landing-burn/)
+- [**Post** - A Kinematic Analysis of Throttle-controlled Powered Landings](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/)
+- [**Post** - Adding Instantaneous Flight Path Angle to the Calculation](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/)
+- [**Photo** - Simulation of atmospheric descent for large vehicles](https://daszeal.github.io/pics/booster-landing-burn/)
 
 ### Future Plans
 - Include mass changes during the landing burn
 - Address atmospheric drag for landings involving atmospheric reentry and terminal velocity
 - Create a simple, computationally cheap program for flight computers to repeatedly run during descent, executing corrective adjustments mid-flight
-
