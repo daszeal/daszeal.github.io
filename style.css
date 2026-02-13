@@ -638,6 +638,7 @@ footer {
 
   font-size: 0.9rem;
   opacity: 0.8;
+  color: white;
 }
 
 /* Status badges */
@@ -649,6 +650,8 @@ footer {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
 }
 
 .status-planned {
@@ -671,6 +674,8 @@ footer {
 .project-content {
   line-height: 1.7;
   margin-top: 1.5rem;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Empty State */
@@ -712,6 +717,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
 }
 
 .project-card {
@@ -737,6 +744,8 @@ footer {
 
 .project-card h3 {
   margin-bottom: 0.6rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
 }
 
 .project-card-meta {
