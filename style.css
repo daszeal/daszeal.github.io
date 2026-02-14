@@ -160,6 +160,14 @@ footer {
   max-width: 700px;
 }
 
+.hero-typing-box {
+  min-height: 3.5rem;     /* enough for your font size */
+  min-width: 12ch;        /* width in characters */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero h1 {
   font-size: 3.5rem;
 }
