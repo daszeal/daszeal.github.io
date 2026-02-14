@@ -78,3 +78,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+const words = [
+  "Daszeal",
+  "Peter Jiang",
+  "蒋睿倾",
+  "daszeal",
+  "Peter",
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const el = document.getElementById("typing");
+
+function typeLoop() {
+
+  const current = words[wordIndex];
+
+  if (!deleting) {
+    el.textContent = current.slice(0, charIndex++);
+  } else {
+    el.textContent = current.slice(0, charIndex--);
+  }
+
+  if (charIndex === current.length + 1) {
+    deleting = true;
+    setTimeout(() => {}, 800);
+  }
+
+  if (charIndex === 0 && deleting) {
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+  }
+
+  setTimeout(typeLoop, deleting ? 50 : 90);
+}
+
+typeLoop();
