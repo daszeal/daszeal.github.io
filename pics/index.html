@@ -7,7 +7,9 @@ title: Pics
 
 <div class="photo-grid">
 
-  {% for photo in site.pics | sort: "date" | reverse %}
+  {% assign photos = site.pics | sort: "date" | reverse %}
+  
+  {% for photo in photos %}
 
     <a href="{{ photo.url | relative_url }}" class="photo-card">
 
