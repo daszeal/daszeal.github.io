@@ -296,10 +296,9 @@ a:not(.card):hover::after {
   }
 }
 
-.card:hover {
-  transform: translateY(-6px) scale(1.05);
+.card:hover img {
+  transform: scale(1.1);
   filter: brightness(1.08);
-
   box-shadow:
     0 15px 30px rgba(0,0,0,0.4);
 }
