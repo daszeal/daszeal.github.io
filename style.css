@@ -161,15 +161,21 @@ footer {
 }
 
 .hero-typing-box {
-  min-height: 3.5rem;     /* enough for your font size */
-  min-width: 12ch;        /* width in characters */
+  width: 20ch;        /* enough for longest word */
+  height: 4.2rem;     /* lock height */
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-size: 3.5rem;
+  line-height: 1;     /* IMPORTANT */
+  margin: 0;          /* IMPORTANT */
 }
 
 .hero p {
@@ -782,9 +788,10 @@ footer {
 }
 #typing::after {
   content: "|";
+  position: absolute;
+  margin-left: 2px;
   animation: blink 1s infinite;
 }
-
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
@@ -793,4 +800,8 @@ footer {
   white-space: nowrap;
   font-size: 3.5rem;
   font-weight: bold;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
