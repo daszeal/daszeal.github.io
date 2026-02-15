@@ -1,16 +1,6 @@
 console.log("JS LOADED");
 document.documentElement.classList.remove("no-js");
 
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.classList.add('active');
-  });
-
-  card.addEventListener('mouseleave', () => {
-    card.classList.remove('active');
-  });
-});
-
 let observer = null;
 
 function setupAnimations() {
@@ -53,7 +43,6 @@ function setupAnimations() {
     observer.observe(el);
   });
 }
-
 
 // Normal load
 window.addEventListener("load", setupAnimations);
