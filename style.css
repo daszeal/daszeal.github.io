@@ -285,6 +285,12 @@ a:not(.card):hover::after {
   transform: translateY(0) scale(1);
 }
 
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
 .card-grid {
   max-width: 1200px;
   margin: 3rem auto;
@@ -307,8 +313,11 @@ a:not(.card):hover::after {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.05);
-  filter: brightness(1.08);
+  transform: translateY(-6px);
+}
+
+.card:hover .card-inner {
+  transform: scale(1.05);
 }
 
 .card h3,
@@ -397,7 +406,7 @@ a:not(.card):hover::after {
 .delay-3 { animation-delay: 0.5s; }
 
 .reveal {
-  transform: translateY(20px) scale(0.95);
+  transform: translateY(20px);
 }
 
 .reveal.visible {
