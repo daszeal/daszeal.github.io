@@ -249,6 +249,10 @@ footer {
   margin-bottom: 1.2em;
 }
 
+a:not(.card):hover::after {
+  transform: scaleX(1);
+}
+
 .card {
   position: relative;
 
@@ -264,7 +268,8 @@ footer {
   flex-direction: column;
   justify-content: flex-end;
 
-  background: rgba(0,0,0,0.4);
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8)),
+    var(--bg);
 
   transition: transform 0.25s ease,
               filter 0.25s ease,
