@@ -13,3 +13,6 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+
+plugins:
+  - jekyll-sitemap
