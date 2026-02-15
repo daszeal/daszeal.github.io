@@ -255,29 +255,36 @@ a:not(.card):hover::after {
 
 .card {
   position: relative;
+
   height: 320px;
   padding: 1.5rem;
 
   border-radius: 20px;
   border: 1px solid rgba(255,255,255,0.2);
+
   overflow: hidden;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(0,0,0,0.8)
-    ),
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8)),
     var(--bg);
+
+  /* START hidden */
+  transform: translateY(20px);
 
   transition:
     transform 0.25s ease,
     filter 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    opacity 0.6s ease;
 }
+
+.card.reveal.visible {
+  transform: translateY(0);
+}
+
 .card-grid {
   max-width: 1200px;
   margin: 3rem auto;
@@ -400,7 +407,6 @@ a:not(.card):hover::after {
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 .no-js .fade-in,
