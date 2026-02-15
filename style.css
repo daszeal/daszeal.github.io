@@ -101,6 +101,14 @@ a.no-animation:hover {
   text-decoration-color: currentColor;
 }
 
+a.no-underline {
+  text-decoration: none;
+}
+
+a.no-underline:hover {
+  text-decoration: none;
+}
+
 background{
     background-color: black;
 }
