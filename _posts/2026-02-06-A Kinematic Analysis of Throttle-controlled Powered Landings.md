@@ -4,7 +4,11 @@ title: A Kinematic Analysis of Throttle-controlled Powered Landings
 description: How to land a rocket
 ---
 
-SpaceX, NASA, Blue Origin, and many other aerospace agencies have all nearly perfected the suicide burn: a landing maneuver where a spacecraft fires its landing engines at the last possible moment so that vertical velocity reaches zero as it touches the ground, requiring the simultaneous management of altitude, fuel, and vertical velocity. This, however, requires the precise calculations done almost instantly by flight computers, presenting a problem when such resources are limited. In this article, we will provide a solution to this problem: a simple algorithm that can be used to calculate parameters for a rapidly descending vehicle given its velocity and altitude at the predefined re-ignition window, helping to set the baseline reference for flight control computers.
+SpaceX, NASA, Blue Origin, and many other aerospace agencies have all nearly perfected the suicide burn: a landing maneuver where a spacecraft fires its landing engines at the last possible moment so that vertical velocity reaches zero as it touches the ground, requiring the simultaneous management of altitude, fuel, and vertical velocity. This, however, requires the precise calculations done almost instantly by flight computers, presenting a problem when such resources are limited. 
+
+All online resources that I've looked into in search of a solution have failed to tackle a central problem: they "assume" a certain terminal velocity or altitude, both of which are uncontrollable without burning extra fuel. While maneuvers like the Falcon 9's Entry Burn do help with predicting the velocity at the start of the landing burn, it does not have any guarantee of 100% accuracy, and in scenarios where a 5 m/s difference can result in a loss-of-mission, we have to look into ways we can control descent given both variables.
+
+The most straightforward answer to this is throttle. In this post, we will provide a solution to this problem: a simple algorithm that can be used to calculate the required throttle for a rapidly descending vehicle given its velocity and altitude at the predefined re-ignition window, helping to set the baseline reference for flight control computers.
 
 ### Model
 In this model we assume these four premises: 
