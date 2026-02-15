@@ -54,6 +54,7 @@ a{
     font-size: 1em;
     font-weight: 400;
     font-style: normal;
+    color: white;
     text-decoration: underline;
     position: relative;   /* needed for underline */
 
