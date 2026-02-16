@@ -2,6 +2,7 @@
 layout: post
 title: End Poem (Test)
 description: Minecraft End Credits
+tags: [other]
 ---
 
 I see the player you mean.
