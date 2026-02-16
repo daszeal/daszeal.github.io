@@ -2,6 +2,7 @@
 layout: post
 title: Adding Instantaneous Flight Path Angle to the Calculation
 description: How to land a rocket (better version)
+tags: [physics, rocketry]
 ---
 
 In my last post, we discussed the ideal landing burn equation that is based off of a spacecraft’s instantaneous velocity, height, and maximum throttle capability to cut off all vertical velocity at the moment it reaches an altitude of zero. While it presented a temporary solution to not over-throttle or under-throttle, it had its realistic limitations, which are also outlined in the article’s conclusion:
