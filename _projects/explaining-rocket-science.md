@@ -14,13 +14,13 @@ Rocket science is cool! More people should know about it, so I want to make some
 - Create an interactive menu for people to select topics they're interested in.
 
 ### Timeline
- -
+*Planned to initiate project during late Feb. to early Mar., 2026.*
 
 ### Outputs
- - 
+--
 
 ### Links
- - 
+--
 
 ### Future Plans
- - 
+--
