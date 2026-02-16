@@ -866,3 +866,46 @@ a:not(.card):hover::after {
 
   position: absolute;
 }
+
+
+
+.post-grid {
+  max-width: 900px;
+  margin: 3rem auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Smaller than project cards */
+.post-card {
+  height: auto;
+  padding: 1.2rem 1.5rem;
+
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+
+  border-radius: 6px;
+
+  background: rgba(255,255,255,0.1);
+}
