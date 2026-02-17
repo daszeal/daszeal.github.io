@@ -927,3 +927,7 @@ a:not(.card):hover::after {
   display: flex;
   justify-content: center;
 }
+.tag-section h2 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
