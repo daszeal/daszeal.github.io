@@ -892,7 +892,7 @@ a:not(.card):hover::after {
   border: 1px solid rgba(255,255,255,0.1);
 
   text-decoration: none;
-  color: inherit;
+  color: white;
 
   transition: all 0.25s ease;
 }
