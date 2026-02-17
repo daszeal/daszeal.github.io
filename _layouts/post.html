@@ -19,13 +19,13 @@ layout: default
 <nav class="post-nav">
 
   {% if page.previous %}
-    <a href="{{ page.previous.url }}" class="post-nav">
+    <a href="{{ page.previous.url }}" class="post-nav no-animation">
       ← Last Post
     </a>
   {% endif %}
 
   {% if page.next %}
-    <a href="{{ page.next.url }}" class="post-nav">
+    <a href="{{ page.next.url }}" class="post-nav no-animation">
       Next Post →
     </a>
   {% endif %}
