@@ -13,3 +13,5 @@ Needs for a spaceplane capable of short-takeoff-and-vertical-landing arose when 
 Propulsive landing using the rear engines are possible but will require a landing directly on the vehicle's stern, potentially damaging engines and control surfaces. STOVL and VTOL planes are the perfect solution to land on landing gear.
 
 Four Thud engines were added to its fuselage. 
+
+This test was meant to simulate landing conditions on a celestial body with lower gravity and fuel expended during Kerbin ascent. Fuel was therefore partially drained. A vertical takeoff would be impossible on Kerbin with full tanks at the vehicle would be too heavy for the thrusters to support.
