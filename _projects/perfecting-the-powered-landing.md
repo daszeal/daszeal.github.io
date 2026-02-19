@@ -25,14 +25,16 @@ Plain English: Finding how to land falling things using rocket engines, [example
 - 2 posts on this website
 - 2 KSP simulations (repeated across 10+ quicksaves) in vacuum conditions with success rates improving over time
 - Multiple KSP atmospheric booster landing attempts (no calculations applied)
+- 1 Python calculator in development
 
 ### Links
-- [**Post** - A Kinematic Analysis of Throttle-controlled Powered Landings](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/)
-- [**Post** - Adding Instantaneous Flight Path Angle to the Calculation](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/)
-- [**Photo** - Simulation of atmospheric descent for large vehicles](https://daszeal.github.io/pics/booster-landing-burn/)
-- [**Photo** - Simulation of vacuum descent for a test probe](https://daszeal.github.io/pics/simulation-landing-gamma/)
+- [**Post**](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/) - A Kinematic Analysis of Throttle-controlled Powered Landings
+- [**Post**](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/) - Adding Instantaneous Flight Path Angle to the Calculation
+- [**Photo**](https://daszeal.github.io/pics/booster-landing-burn/) - Simulation of atmospheric descent for large vehicles
+- [**Photo**](https://daszeal.github.io/pics/simulation-landing-gamma/) - Simulation of vacuum descent for a test probe
 
 ### Future Plans
 - Include mass changes during the landing burn;
 - Address atmospheric drag for landings involving atmospheric reentry and terminal velocity;
-- Create a simple, computationally cheap program for flight computers to repeatedly run during descent, executing corrective adjustments mid-flight.
+- Create a simple, computationally cheap program for flight computers to repeatedly run during descent, executing corrective adjustments mid-flight;
+- Code a web-based Python calculator for such calculations based on the latest model.
