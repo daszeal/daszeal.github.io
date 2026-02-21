@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://daszeal.github.io/sitemap.xml
+Sitemap: https://daszeal.github.io/sitemap.xml/
