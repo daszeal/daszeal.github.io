@@ -5,11 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <title>  
-    {% if page.title %}
-      {{ page.title }} | Daszeal
+    {% if page.url == "/" %}
+      {{ site.title }} 
     {% else %}
-      Daszeal's Site
-    {% endif %}</title>
+      {{ page.title }} | {{ site.title }}
+    {% endif %}
+  </title>
   <meta name="description" content="{{ page.description | default: "Cool stuff made by Daszeal" }}">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   <link rel="icon" href="{{ '/assets/favicon2.png' | relative_url }}">
