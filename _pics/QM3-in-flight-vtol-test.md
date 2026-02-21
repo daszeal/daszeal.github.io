@@ -22,4 +22,4 @@ After orbit insertion the vehicle managed to dock with the Blue Space Transfer V
 
 Spaceplane 1 then deorbited and reentered the atmosphere for the second time without maintainence. 
 
-Reentry conditions were nominal, and enough oxidezer was left to successfully attempt a vertical landing.
+Reentry conditions were nominal, and enough oxidizer was left to successfully attempt a vertical landing.
