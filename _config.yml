@@ -1,6 +1,6 @@
 baseurl: ""
 url: "https://daszeal.github.io"
-title: "Daszeal's website"
+title: "Daszeal"
 permalink: /:year/:month/:day/:title/
 
 collections:
