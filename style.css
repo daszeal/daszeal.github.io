@@ -989,7 +989,8 @@ a:not(.card):hover::after {
 
   background-size: cover;
   background-position: center;
-
+  top: -25px;
+  scale: 80%;
   transition: transform 0.2s ease;
 }
 
