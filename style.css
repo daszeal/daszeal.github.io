@@ -990,6 +990,8 @@ a:not(.card):hover::after {
   background-size: cover;
   background-position: center;
   opacity: 0.5;
+  top: -70px;
+  scale: 70%;
   transform: translateY(0);
 
   transition:
@@ -998,16 +1000,14 @@ a:not(.card):hover::after {
 }
 
 .tool-card:hover .tool-bg {
-  transform: translateY(40%);
+  transform: translateY(35px);
   opacity: 1;
-}
 }
 
 .tool-content {
   bottom: 0;
-  justify-content: center;
 
   background: linear-gradient(to top, black, transparent);
 
-  padding: 1.5rem;
+  padding: 1.rem;
 }
