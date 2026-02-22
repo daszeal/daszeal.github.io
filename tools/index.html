@@ -1,0 +1,26 @@
+---
+layout: default
+title: Tools
+---
+
+<h1>Tools</h1>
+
+<p>Some fun calculators I made.</p>
+
+<div class="tools-grid">
+
+  {% assign sorted_tools = site.tools | sort: "order" %}
+
+  {% for tool in sorted_tools %}
+    <a href="{{ tool.url | relative_url }}"
+       class="card tool-card reveal">
+
+      <div class="tool-content">
+        <h3>{{ tool.title }}</h3>
+        <p>{{ tool.description }}</p>
+      </div>
+
+    </a>
+  {% endfor %}
+
+</div>
