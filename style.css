@@ -965,3 +965,43 @@ a:not(.card):hover::after {
   position: absolute;
   left: -9999px;
 }
+.tools-grid {
+  max-width: 1100px;
+  margin: 3rem auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.tool-card {
+  position: relative;
+  aspect-ratio: 1 / 1.2; 
+  overflow: hidden;
+
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.tool-bg {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  transition: transform 0.6s ease;
+}
+
+.tool-card:hover .tool-bg {
+  transform: scale(1.1);
+}
+
+.tool-content {
+  position: absolute;
+  bottom: 0;
+
+  padding: 1.5rem;
+
+  background: linear-gradient(to top, black, transparent);
+}
