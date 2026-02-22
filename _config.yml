@@ -15,6 +15,10 @@ collections:
     output: true
     permalink: /projects/:name/
 
+  tools:
+    output: true
+    permalink: /tools/:name/
+
 plugins:
   - jekyll-sitemap
 
