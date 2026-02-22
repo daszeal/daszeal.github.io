@@ -999,6 +999,7 @@ a:not(.card):hover::after {
 
 .tool-content {
   position: absolute;
+  text-align: center;
   bottom: 0;
 
   padding: 1.5rem;
