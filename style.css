@@ -1030,3 +1030,72 @@ a:not(.card):hover::after {
   align-items: center;
   gap: 0.5rem;
 }
+/* Remove number arrows - Chrome, Safari, Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove for Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.tool-form input[type="number"] {
+  padding: 1.2rem;
+  font-size: 1.15rem;
+}
+.tool-form button {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: center;
+  transition: background 0.2s ease;
+}
+
+.tool-form button:hover {
+  background: rgba(255,255,255,0.1);
+}
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checkbox::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 4px;
+  display: inline-block;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.checkbox span::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  transition: background 0.2s ease;
+}
+
+.checkbox input:checked + span::before {
+  background: white;
+  transform: scale(1.05);
+}
