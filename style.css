@@ -1044,7 +1044,13 @@ input[type=number] {
 .tool-form input[type="number"] {
   padding: 1.2rem;
   font-size: 1.2rem;
-  font-family: menlo
+  font-family: menlo;
+  color: white
+}
+.tool-form input{
+  border-radius: 10px
+  border: 1px white;
+  background: rgba(255,255,255,0.1);
 }
 .tool-form button {
   padding: 0.6rem 1.2rem;
