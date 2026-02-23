@@ -12,7 +12,7 @@ order: 1
 
   <label class="checkbox">
     <input type="checkbox" id="terminal_v">
-    Terminal velocity?
+    <span>Terminal velocity?</span>
   </label>
 
   <input type="number" step="any" id="h" placeholder="Height (m)" required>
