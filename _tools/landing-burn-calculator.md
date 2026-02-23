@@ -12,17 +12,17 @@ order: 1
 
   <label class="checkbox">
     <input type="checkbox" id="terminal_v">
-    <span>Terminal velocity?</span>
+    <span>Terminal velocity</span>
   </label>
 
-  <input type="number" step="any" id="h" placeholder="Height (m)" required>
+  <input type="number" step="any" id="h" placeholder="*Height (m)" required>
   <input type="number" step="any" id="g" placeholder="Gravity (m/s²) - Leave blank for 9.8">
-  <input type="number" step="any" id="m" placeholder="Mass (t)" required>
-  <input type="number" step="any" id="t" placeholder="Thrust (kN)" required>
+  <input type="number" step="any" id="m" placeholder="*Mass (t)" required>
+  <input type="number" step="any" id="t" placeholder="*Thrust (kN)" required>
   <input type="number" step="any" id="gamma" placeholder="Angle (°)">
   <input type="number" step="any" id="x" placeholder="Downrange distance (m)">
 
-  <button type="submit">Calculate throttle</button>
+  <button type="submit">Calculate throttle percentage</button>
 
 </form>
 
