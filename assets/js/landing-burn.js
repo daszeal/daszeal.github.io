@@ -3,7 +3,10 @@ document.getElementById("throttle-form").addEventListener("submit", function(e) 
 
   const v = parseFloat(document.getElementById("v").value);
   const h = parseFloat(document.getElementById("h").value);
-  const g = parseFloat(document.getElementById("g").value);
+  let g = parseFloat(document.getElementById("g").value);
+  if (isNaN(g)) {
+    g = 9.8;
+  }
   const m = parseFloat(document.getElementById("m").value);
   const t = parseFloat(document.getElementById("t").value);
   const gamma = parseFloat(document.getElementById("gamma").value);
