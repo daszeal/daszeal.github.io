@@ -16,7 +16,7 @@ order: 1
   </label>
 
   <input type="number" step="any" id="h" placeholder="Height (m)" required>
-  <input type="number" step="any" id="g" placeholder="Gravity (m/s²)" value="9.8" required>
+  <input type="number" step="any" id="g" placeholder="Gravity (m/s²) - Leave blank for 9.8">
   <input type="number" step="any" id="m" placeholder="Mass (t)" required>
   <input type="number" step="any" id="t" placeholder="Thrust (kN)" required>
   <input type="number" step="any" id="gamma" placeholder="Angle (°)">
