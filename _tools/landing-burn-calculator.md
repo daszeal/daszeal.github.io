@@ -8,9 +8,9 @@ order: 1
 
 This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
 
-It assumes you fire immediately at the point in time when the inputs are taken. 
+It assumes you fire immediately at the point in time when the inputs are taken. Flight path angle is taken from the local vertical (0º would be vertically up, 90º would be horizontal)
 
-Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. 
+Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. The model also assumes a 0º angle-of-attack.
 
 Forms marked with an asterisk are required.
 
@@ -30,8 +30,8 @@ Enjoy!
   <input type="number" step="any" id="h" placeholder="Height (m) *" required>
   <input type="number" step="any" id="g" placeholder="Gravity (m/s²) - Leave blank for 9.8">
   <input type="number" step="any" id="m" placeholder="Mass (t) *" required>
-  <input type="number" step="any" id="t" placeholder="*Thrust (kN) * " required>
-  <input type="number" step="any" id="gamma" placeholder="Angle (°)">
+  <input type="number" step="any" id="t" placeholder="Thrust (kN) * " required>
+  <input type="number" step="any" id="gamma" placeholder="Flight path angle (°)">
   <input type="number" step="any" id="x" placeholder="Downrange distance (m)">
 
   <button type="submit">Calculate throttle percentage</button>
