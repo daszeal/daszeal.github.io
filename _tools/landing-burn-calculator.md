@@ -6,17 +6,13 @@ thumbnail: /assets/thumbnails/landing.png
 order: 1
 ---
 
-This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
+<p class="about-content">This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
 
-It assumes you fire immediately at the point in time when the inputs are taken. Flight path angle is taken from the local vertical (0º would be vertically up, 90º would be horizontal)
+It assumes you fire immediately at the point in time when the inputs are taken. Flight path angle is taken from the local vertical (0º would be vertically up, 90º would be horizontal). Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. The model also assumes a 0º angle-of-attack.
 
-Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. The model also assumes a 0º angle-of-attack.
+Forms marked with an asterisk are required. I disclaim any responsibility if you decide to use this to land a vehicle, real or fake, and it results in a RUD.
 
-Forms marked with an asterisk are required.
-
-I disclaim any responsibility if you decide to use this to land a vehicle, real or fake, and it results in a RUD.
-
-Enjoy!
+Enjoy!</p>
 
 <form id="throttle-form" class="tool-form">
 
