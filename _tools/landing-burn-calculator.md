@@ -6,6 +6,18 @@ thumbnail: /assets/thumbnails/landing.png
 order: 1
 ---
 
+This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
+
+It assumes you fire immediately at the point in time when the inputs are taken. 
+
+Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. 
+
+Forms marked with an asterisk are required.
+
+I disclaim any responsibility if you decide to use this to land a vehicle, real or fake, and it results in a RUD.
+
+Enjoy!
+
 <form id="throttle-form" class="tool-form">
 
   <input type="number" step="any" id="v" placeholder="Velocity (m/s) * " required>
