@@ -1050,7 +1050,7 @@ input[type=number] {
   border: 1px solid white;
   border-radius: 8px;
   background: transparent;
-  color: inherit;
+  color: white;
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
@@ -1073,16 +1073,6 @@ input[type=number] {
   font-size: 1rem;
 }
 
-.checkbox::before {
-  content: "";
-  width: 18px;
-  height: 18px;
-  border: 2px solid white;
-  border-radius: 4px;
-  display: inline-block;
-  transition: background 0.2s ease, transform 0.1s ease;
-}
-
 .checkbox span::before {
   content: "";
   width: 18px;
@@ -1093,6 +1083,8 @@ input[type=number] {
   margin-right: 0.6rem;
   vertical-align: middle;
   transition: background 0.2s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
 }
 
 .checkbox input:checked + span::before {
