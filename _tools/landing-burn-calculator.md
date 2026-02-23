@@ -4,4 +4,4 @@ description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
 order: 1
 ---
-*Calculator in development.*
+*Surprise surprise! Calculator's in development. Check later.*
