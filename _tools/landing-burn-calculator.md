@@ -36,4 +36,10 @@ Enjoy!</p>
 
 <p id="result" class="tool-result"></p>
 
+If that value is above 100% then expect a crash unless you have extra engines you can relight 💀💀💀
+
+Remember that most real-life engines have a minimum throttle range. 
+
+You can also run this repeatedly to correct your throttle midair. 
+
 <script src="/assets/js/landing-burn.js"></script>
