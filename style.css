@@ -1043,7 +1043,8 @@ input[type=number] {
 }
 .tool-form input[type="number"] {
   padding: 1.2rem;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  font-family: menlo
 }
 .tool-form button {
   padding: 0.6rem 1.2rem;
