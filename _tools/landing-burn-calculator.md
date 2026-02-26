@@ -5,6 +5,7 @@ description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
 order: 1
 ---
+*v1.1*
 
 <p class="about-content">This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
 
