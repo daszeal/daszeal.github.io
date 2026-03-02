@@ -14,16 +14,16 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
 <form id="landing-form" class="tool-form">
 
   <div class="mode-selector">
-    <label class="chackbox">
-      <input type="radio" name="mode" value="vacuum" required>
+    <label class="checkbox">
+      <input type="checkbox" name="mode" value="vacuum" id="vacuum">
       <span>Vacuum</span>
     </label>
-    <label class="chackbox">
-      <input type="radio" name="mode" value="earth">
+    <label class="checkbox">
+      <input type="checkbox" name="mode" value="earth" id="earth">
       <span>Earth</span>
     </label>
-    <label class="chackbox">
-      <input type="radio" name="mode" value="kerbin">
+    <label class="checkbox">
+      <input type="checkbox" name="mode" value="kerbin" id="kerbin">
       <span>Kerbin</span>
     </label>
   </div>
