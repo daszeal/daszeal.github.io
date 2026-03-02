@@ -22,7 +22,7 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
       <input type="radio" name="mode" value="earth" id="earth">
       <span>Earth</span>
     </label>
-    <label">
+    <label>
       <input type="radio" name="mode" value="kerbin" id="kerbin">
       <span>Kerbin</span>
     </label>
