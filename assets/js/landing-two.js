@@ -4,9 +4,16 @@ document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("landing-form");
 
   form.addEventListener("submit", function(e) {
+
+    if (!form.checkValidity()) {
+      return; 
+    }
+  
     e.preventDefault();
 
-  const mode = document.querySelector('input[name="mode"]:checked').value;
+  const selectedMode = document.querySelector('input[name="mode"]:checked');
+  if (!selectedMode) return;
+  const mode = selectedMode.value;
 
   const mDryTons = parseFloat(document.getElementById("m_dry").value);
   const thrustMaxkN = parseFloat(document.getElementById("thrust_max").value);
