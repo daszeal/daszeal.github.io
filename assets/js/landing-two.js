@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const warnings = [];
 
   if (bestThrottle < 0.4) {
-    warnings.push("WARNING: LOW THROTTLE - Most real life engines cannot throttle this low. Use at your own risk.");
+    warnings.push("Warning: Low Throttle - Most real life engines cannot throttle this low. Use at your own risk.");
   }
 
   const maxTest = simulate(1.0);
@@ -112,8 +112,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("result").innerHTML = `
     <p><strong>Throttle:</strong> ${(bestThrottle * 100).toFixed(1)}%</p>
-    <p><strong>Kerbal Scale:</strong> ${(bestThrottle * 15).toFixed(1)}</p>
-    <p><strong>Burn Time:</strong> ${result.burnTime.toFixed(1)} s</p>
+    <p><strong>KSP Scale:</strong> ${(bestThrottle * 15).toFixed(1)}/15</p>
+    <p><strong>Burn Time:</strong> ${result.burnTime.toFixed(1)} sec</p>
     ${warnings.length ? `<p>${warnings.join("<br>")}</p>` : ""}
   `;
 });
