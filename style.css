@@ -1116,6 +1116,7 @@ input[type=number] {
   display: inline-block;
   margin: 0 0.5rem;
   transition: background 0.2s ease;
+  color: white;
 }
 
 .mode-selector input:checked + span {
