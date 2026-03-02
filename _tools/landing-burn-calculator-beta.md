@@ -16,7 +16,7 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
 <h3>Mode</h3>
   <div class="mode-selector">
     <label>
-      <input type="radio" name="mode" value="vacuum" id="vacuum">
+      <input type="radio" name="mode" value="vacuum" id="vacuum" required>
       <span>Vacuum</span>
     </label>
     <label>
@@ -47,4 +47,4 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
 
 <div id="result" class="tool-result"></div>
 
-<script src="/assets/js/landing-two.js"></script>
+<script src="/assets/js/landing-two.js" defer></script>
