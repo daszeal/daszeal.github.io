@@ -1100,3 +1100,6 @@ input[type=number] {
   background: white;
   transform: scale(1.05);
 }
+.mode-selector input[type="radio"] {
+  display: none;
+}
