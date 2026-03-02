@@ -2,39 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const form = document.getElementById("landing-form");
 
-  const modeRadios = document.querySelectorAll('input[name="mode"]');
-  const diameterInput = document.getElementById("diameter");
-  const CdInput = document.getElementById("Cd");
-  const resultDiv = document.getElementById("result");
-
-  function updateRequirements() {
-    const selectedMode = document.querySelector('input[name="mode"]:checked');
-
-    if (!selectedMode) return;
-
-    if (selectedMode.value === "vacuum") {
-      diameterInput.required = false;
-      CdInput.required = false;
-      diameterInput.disabled = true;
-      CdInput.disabled = true;
-    } else {
-      diameterInput.required = true;
-      CdInput.required = true;
-      diameterInput.disabled = false;
-      CdInput.disabled = false;
-    }
-  }
-
-  modeRadios.forEach(radio => {
-    radio.addEventListener("change", updateRequirements);
-  });
-
-  updateRequirements(); // run once on load
-
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-
-  e.preventDefault();
 
   const mode = document.querySelector('input[name="mode"]:checked').value;
 
@@ -142,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ${warnings.length ? `<hr><p>${warnings.join("<br>")}</p>` : ""}
   `;
 });
-    });
+
+  });
 
 });
