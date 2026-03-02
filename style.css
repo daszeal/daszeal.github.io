@@ -1103,3 +1103,17 @@ input[type=number] {
 .mode-selector input[type="radio"] {
   display: none;
 }
+.mode-selector label span {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.mode-selector input:checked + span {
+  background: white;
+  color: black;
+}
