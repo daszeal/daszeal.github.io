@@ -30,21 +30,22 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
   </div>
 
   <h3>Pre-launch</h3>
-  <input type="number" step="any" id="m_dry" placeholder="Dry Mass (t)" required>
-  <input type="number" step="any" id="thrust_max" placeholder="Thrust (kN)" required>
-  <input type="number" step="any" id="Isp" placeholder="Isp (sec)" required>
+  <input type="number" step="any" id="m_dry" placeholder="Dry Mass (t) *" required>
+  <input type="number" step="any" id="thrust_max" placeholder="Thrust (kN) *" required>
+  <input type="number" step="any" id="Isp" placeholder="Isp (sec) *" required>
   <input type="number" step="any" id="diameter" placeholder="Rocket diameter (m)">
   <input type="number" step="any" id="gravity" placeholder="Gravity (m/s²)">
   <input type="number" step="any" id="Cd" placeholder="Coefficient of drag">
 
   <h3>During Landing</h3>
-  <input type="number" step="any" id="v0" placeholder="Velocity (m/s)" required>
-  <input type="number" step="any" id="h0" placeholder="Altitude (m)" required>
-  <input type="number" step="any" id="m0" placeholder="Current mass (t)" required>
+  <input type="number" step="any" id="v0" placeholder="Velocity (m/s) *" required>
+  <input type="number" step="any" id="h0" placeholder="Altitude (m) *" required>
+  <input type="number" step="any" id="m0" placeholder="Current mass (t) *" required>
 
-  <button type="submit">Calculate throttle</button>
+  <button type="submit">Calculate</button>
 </form>
 
 <div id="result" class="tool-result"></div>
+<br>
 
 <script src="/assets/js/landing-two.js" defer></script>
