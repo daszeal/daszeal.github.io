@@ -1,3 +1,4 @@
+console.log("Calculator Script Loaded, Please Proceed");
 document.addEventListener("DOMContentLoaded", function() {
 
   const form = document.getElementById("landing-form");
