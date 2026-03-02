@@ -100,23 +100,21 @@ document.addEventListener("DOMContentLoaded", function() {
   const warnings = [];
 
   if (bestThrottle < 0.4) {
-    warnings.push("Low throttle — many engines cannot throttle this low.");
+    warnings.push("WARNING: LOW THROTTLE - Most real life engines cannot throttle this low. Use at your own risk.");
   }
 
   const maxTest = simulate(1.0);
   if (maxTest.vFinal > 0) {
-    warnings.push("CRITICAL: Max thrust insufficient. Lithobraking likely.");
+    warnings.push("CRITICAL WARNING: THRUST TOO LOW! - Maximum throttle insufficient for controlled landing. Prepare for a Rapid Unscheduled Disassembly.");
   }
 
   const finalMassTons = result.mFinal / 1000;
 
   document.getElementById("result").innerHTML = `
     <p><strong>Throttle:</strong> ${(bestThrottle * 100).toFixed(1)}%</p>
-    <p><strong>Kerbal Scale:</strong> ${(bestThrottle * 15).toFixed(2)}</p>
+    <p><strong>Kerbal Scale:</strong> ${(bestThrottle * 15).toFixed(1)}</p>
     <p><strong>Burn Time:</strong> ${result.burnTime.toFixed(1)} s</p>
-    <p><strong>Final Mass:</strong> ${finalMassTons.toFixed(2)} t</p>
-    <p><strong>Average Drag:</strong> ${result.avgDrag.toFixed(0)} N</p>
-    ${warnings.length ? `<hr><p>${warnings.join("<br>")}</p>` : ""}
+    ${warnings.length ? `<p>${warnings.join("<br>")}</p>` : ""}
   `;
 });
 
