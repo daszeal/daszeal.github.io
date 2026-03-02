@@ -9,7 +9,7 @@ version: v1.2
 
 <p class="caption">Version: {{ page.version }}</p>
 
-Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial)
+Tutorial [here](https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/)
 
 <form id="landing-form" class="tool-form">
 
