@@ -13,6 +13,7 @@ Tutorial [here](https://daszeal.github.io/posts/landing-burn-calculator-tutorial
 
 <form id="landing-form" class="tool-form">
 
+<h3>Mode</h3>
   <div class="mode-selector">
     <label>
       <input type="radio" name="mode" value="vacuum" id="vacuum">
