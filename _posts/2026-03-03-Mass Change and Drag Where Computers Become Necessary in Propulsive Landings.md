@@ -100,4 +100,4 @@ The beta version of [v1.2](https://daszeal.github.io/tools/landing-burn-calculat
 
 [2]“Reddit,” Reddit.com, 2024. https://www.reddit.com/r/SpaceXLounge/comments/7xl5yp/drag_coefficient_of_falcon_9_1st_stage_in_landing/.
 
-[3]J. Attema and D. van der Heijden, “Kerbin | Planets | Kerbal Space Program,” Github.io, 2026. https://avans.github.io/Webdictaat/showcase/ksp/planets/kerbin.html.
+[3]J. Attema and D. van der Heijden, “Kerbin” avans.github.io, 2026. https://avans.github.io/Webdictaat/showcase/ksp/planets/kerbin.html.
