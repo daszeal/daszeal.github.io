@@ -21,6 +21,3 @@ collections:
 
 plugins:
   - jekyll-sitemap
-
-whitelist:
-  - jekyll-sitemap
