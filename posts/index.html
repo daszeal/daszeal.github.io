@@ -5,6 +5,18 @@ title: Posts
 
 <h1>Posts</h1>
 
+<div class="search-container">
+
+<input
+  id="search-input"
+  type="text"
+  placeholder="Search posts"
+>
+
+<div id="search-results"></div>
+
+</div>
+
 <div class="post-grid">
 
   {% for post in site.posts %}
