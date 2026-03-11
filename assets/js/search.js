@@ -62,3 +62,20 @@ function displayResults(results) {
   });
 
 }
+
+function makeSnippet(text, metadata) {
+
+  let snippet = text.slice(0,200);
+
+  Object.keys(metadata).forEach(word => {
+
+    const regex = new RegExp(word, "gi");
+
+    snippet = snippet.replace(regex,
+      `<span class="search-highlight">${word}</span>`);
+
+  });
+
+  return snippet + "...";
+
+}
