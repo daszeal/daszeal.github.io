@@ -63,19 +63,52 @@ function displayResults(results) {
 
 }
 
-function makeSnippet(text, metadata) {
+function makeSnippet(text, metadata){
 
-  let snippet = text.slice(0,200);
+  const words = Object.keys(metadata);
 
-  Object.keys(metadata).forEach(word => {
+  if(words.length === 0){
+    return text.slice(0,200) + "...";
+  }
 
-    const regex = new RegExp(word, "gi");
+  const lowerText = text.toLowerCase();
 
-    snippet = snippet.replace(regex,
-      `<span class="search-highlight">${word}</span>`);
+  let firstIndex = -1;
+  let matchWord = "";
+
+  words.forEach(word => {
+
+    const index = lowerText.indexOf(word.toLowerCase());
+
+    if(index !== -1 && (firstIndex === -1 || index < firstIndex)){
+      firstIndex = index;
+      matchWord = word;
+    }
 
   });
 
-  return snippet + "...";
+  if(firstIndex === -1){
+    return text.slice(0,200) + "...";
+  }
 
+  const snippetRadius = 120;
+
+  const start = Math.max(0, firstIndex - snippetRadius);
+  const end = Math.min(text.length, firstIndex + snippetRadius);
+
+  let snippet = text.slice(start, end);
+
+  words.forEach(word => {
+
+    const regex = new RegExp(`(${word})`, "gi");
+
+    snippet = snippet.replace(regex,
+      `<span class="search-highlight no-underline">$1</span>`);
+
+  });
+
+  if(start > 0) snippet = "..." + snippet;
+  if(end < text.length) snippet += "...";
+
+  return snippet;
 }
