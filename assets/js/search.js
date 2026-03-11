@@ -52,7 +52,7 @@ function displayResults(results) {
 
     container.innerHTML += `
       <div class="search-result">
-        <a href="${post.url}">
+        <a href="${post.url}" class="no-underline">
           <h4>${post.title}</h4>
           <p>${snippet}</p>
         </a>
