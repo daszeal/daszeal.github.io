@@ -52,7 +52,7 @@ function displayResults(results) {
 
     container.innerHTML += `
       <div class="search-result">
-        <a href="${post.url}" class="no-underline">
+        <a href="${post.url}" class="no-animation">
           <h4>${post.title}</h4>
           <p>${snippet}</p>
         </a>
@@ -63,52 +63,86 @@ function displayResults(results) {
 
 }
 
-function makeSnippet(text, metadata){
+function makeSnippet(text, metadata) {
 
   const words = Object.keys(metadata);
 
-  if(words.length === 0){
-    return text.slice(0,200) + "...";
+  if (words.length === 0) {
+    return text.slice(0, 200) + "...";
   }
 
-  const lowerText = text.toLowerCase();
+  const paragraphs = text.split(/\n+/);
 
-  let firstIndex = -1;
-  let matchWord = "";
+  let selectedParagraph = "";
 
-  words.forEach(word => {
+  for (let p of paragraphs) {
 
-    const index = lowerText.indexOf(word.toLowerCase());
+    const lower = p.toLowerCase();
 
-    if(index !== -1 && (firstIndex === -1 || index < firstIndex)){
-      firstIndex = index;
-      matchWord = word;
+    for (let word of words) {
+      if (lower.includes(word.toLowerCase())) {
+        selectedParagraph = p;
+        break;
+      }
     }
 
-  });
+    if (selectedParagraph) break;
 
-  if(firstIndex === -1){
-    return text.slice(0,200) + "...";
   }
 
-  const snippetRadius = 120;
+  if (!selectedParagraph) {
+    selectedParagraph = paragraphs[0];
+  }
 
-  const start = Math.max(0, firstIndex - snippetRadius);
-  const end = Math.min(text.length, firstIndex + snippetRadius);
+  let snippet = selectedParagraph.trim();
 
-  let snippet = text.slice(start, end);
+  // Trim overly long paragraphs
+  const maxLength = 260;
 
+  if (snippet.length > maxLength) {
+
+    let firstIndex = -1;
+
+    for (let word of words) {
+
+      const index = snippet.toLowerCase().indexOf(word.toLowerCase());
+
+      if (index !== -1 && (firstIndex === -1 || index < firstIndex)) {
+        firstIndex = index;
+      }
+
+    }
+
+    if (firstIndex !== -1) {
+
+      const radius = 120;
+
+      const start = Math.max(0, firstIndex - radius);
+      const end = Math.min(snippet.length, firstIndex + radius);
+
+      snippet = snippet.slice(start, end);
+
+      if (start > 0) snippet = "..." + snippet;
+      if (end < selectedParagraph.length) snippet += "...";
+
+    } else {
+
+      snippet = snippet.slice(0, maxLength) + "...";
+
+    }
+
+  }
+
+  // Highlight matched words
   words.forEach(word => {
 
-    const regex = new RegExp(`(${word})`, "gi");
+    const regex = new RegExp(`\\b(${word})\\b`, "gi");
 
     snippet = snippet.replace(regex,
-      `<span class="search-highlight no-underline">$1</span>`);
+      `<span class="search-highlight">$1</span>`);
 
   });
 
-  if(start > 0) snippet = "..." + snippet;
-  if(end < text.length) snippet += "...";
-
   return snippet;
+
 }
