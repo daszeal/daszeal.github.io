@@ -1176,8 +1176,9 @@ input[type=number] {
 }
 
 .search-highlight{
-  background:yellow;
-  color:black;
-  padding:0 2px;
-  border-radius:2px;
+  background: #ffd54a;
+  color: black;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: 600;
 }
