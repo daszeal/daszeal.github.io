@@ -2,10 +2,10 @@ console.log("Calculator Script Loaded, Please Proceed");
 
 const planetData = {
   earth: { mass: 5.972e24, radius: 6371 },
-  kerbin: { mass: 5.972e24, radius: 600 },
+  kerbin: { mass: 5.292e22, radius: 600 },
   moon: { mass: 7.342e22, radius: 1737.4 },
   sun: { mass: 1.989e30, radius: 696340 },
-  kerbol: { mass: 1.989e30, radius: 261600 }
+  kerbol: { mass: 1.757e28, radius: 261600 }
 
 };
 
