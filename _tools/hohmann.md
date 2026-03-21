@@ -8,6 +8,8 @@ version: v1.1
 ---
 <p class="caption">Version: {{ page.version }}</p>
 
+<p class="caption">Warning: Tool only works for near-circular orbits with identical inclination planes. Eccentric or inclined orbits will result in larger errors in calculation.</p>
+
 <form id="hohmann-form" class="tool-form">
 
   <h3>Planet parameters</h3>
