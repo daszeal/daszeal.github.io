@@ -1053,23 +1053,86 @@ input[type=number] {
   border: 1px white;
   background: rgba(255,255,255,0.1);
 }
-.tool-form button {
-  padding: 0.6rem 1.2rem;
-  border: 1px solid white;
-  border-radius: 8px;
-  background: transparent;
+.tool-form select {
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  font-family: menlo;
   color: white;
-  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid white;
+  background: rgba(255,255,255,0.1);
+  appearance: none; 
   cursor: pointer;
-  text-decoration: none;
-  align-self: center;
-  transition: background 0.2s ease;
+}
+.tool-form select:focus {
+  outline: none;
+  border-color: white;
+}
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.input-group input {
+  flex: 1;
+}
+.input-group select {
+  flex-shrink: 0;
+  width: auto;
+
 }
 
-.tool-form button:hover {
-  background: white;
-  color: black;
+.tool-form button {
+  padding: 0.75rem 1.4rem;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  align-self: stretch;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
+
+.tool-form button:hover,
+.tool-form button:focus {
+  background: rgba(255,255,255,0.9);
+  color: black;
+  transform: translateY(-1px);
+}
+
+.tool-form .input-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.tool-form .input-group input,
+.tool-form .input-group select {
+  width: 40%;
+  min-width: 0;
+}
+
+.tool-form select {
+  padding: 1.2rem;
+  font-size: 1.2rem;
+  font-family: menlo;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  appearance: none;
+  cursor: pointer;
+}
+
+.tool-form select:focus {
+  outline: none;
+  border-color: white;
+}
+
 .checkbox input[type="checkbox"] {
   display: none;
 }
