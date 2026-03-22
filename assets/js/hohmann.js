@@ -1,5 +1,3 @@
-console.log("Calculator Script Loaded, Please Proceed");
-
 const planetData = {
   earth: { mass: 5.972e24, radius: 6371 },
   kerbin: { mass: 5.292e22, radius: 600 },
@@ -79,17 +77,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const G = 6.67430e-11;
 
     let mu = G * m_body;
-    let a_start = (ap_start + pe_start) / 2; // parking orbit semi-major axis
-    let a_end = (ap_end + pe_end) / 2; // target orbit semi-major axis
-    let r_start = a_start + r_body; // parking radius from planet cg
-    let r_end = a_end + r_body; // target radius from planet cg
+    let a_start = (ap_start + pe_start) / 2; 
+    let a_end = (ap_end + pe_end) / 2; 
+    let r_start = a_start + r_body; 
+    let r_end = a_end + r_body; 
 
     const dv_transfer = Math.sqrt(mu / r_start) * (Math.sqrt(2 * r_end / (r_start + r_end)) - 1);
     const v_intercept = Math.sqrt(mu / r_end) * (1 - Math.sqrt(2 * r_start / (r_start + r_end)));
-    const alpha = Math.PI * (1 - 1 / (2 * Math.sqrt(2)) * Math.sqrt((r_start / r_end + 1) ** 3));
+    const phi = Math.PI * (1 - 1 / (2 * Math.sqrt(2)) * Math.sqrt((r_start / r_end + 1) ** 3));
 
     document.getElementById("result").innerHTML = `
-      <p><strong>Optimal Phase angle:</strong> ${(alpha * 180 / Math.PI).toFixed(1)}°</p>
+      <p><strong>Optimal Phase angle:</strong> ${(phi * 180 / Math.PI).toFixed(1)}°</p>
       <p><strong>Estimated Transfer Delta-V:</strong> ${(dv_transfer).toFixed(1)} m/s</p>
       <p><strong>Estimated Intercept Velocity:</strong> ${(v_intercept).toFixed(1)} m/s</p>
     `;
