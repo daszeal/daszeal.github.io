@@ -1,5 +1,5 @@
 ---
-title: Landing Burn Calculator
+title: Landing Burn Calculator (Alpha)
 layout: tool
 description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
