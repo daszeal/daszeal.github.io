@@ -5,7 +5,7 @@ description: How I built my new landing calculator
 tags: [physics, rocketry, coding]
 ---
 
-So I recently programmed a [small calculator](https://daszeal.github.io/tools/landing-burn-calculator/) with my throttle equation derived from [this post](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/), laying out the original theory that powered landings require throttle control, and [this post](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/), addressing the additional distance flown during the landing due to flight path angle. This was created since repeatedly typing numbers into Desmos when playing KSP is inefficient and impractical. 
+So I recently programmed a [small calculator](https://daszeal.github.io/tools/landing-burn-calculator-alpha/) with my throttle equation derived from [this post](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/), laying out the original theory that powered landings require throttle control, and [this post](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/), addressing the additional distance flown during the landing due to flight path angle. This was created since repeatedly typing numbers into Desmos when playing KSP is inefficient and impractical. 
 
 ### Testing the old formula
 
@@ -92,7 +92,7 @@ along with
 
 However, most of these limitations can either be eyeballed or do not have any meaningful effect on the final throttle. If the need arises to address these limitations, I will do so in the next post and version of the calculator. 
 
-The beta version of [v1.2](https://daszeal.github.io/tools/landing-burn-calculator-beta/) should come out when this gets posted, along with a [tutorial](https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/) for using it if it comes across any lost KSP players. Tests were completed with the suborbital rocket, yielding above-nominal results, including the first-ever fully constant-thrust, no-human-input soft-landing. Tests will continue until proven effective in vacuum conditions, then it will be updated to the official version.
+The beta version of [v1.2](https://daszeal.github.io/tools/landing-burn-calculator/) should come out when this gets posted, along with a [tutorial](https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/) for using it if it comes across any lost KSP players. Tests were completed with the suborbital rocket, yielding above-nominal results, including the first-ever fully constant-thrust, no-human-input soft-landing. Tests will continue until proven effective in vacuum conditions, then it will be updated to the official version.
 
 ### References
 
