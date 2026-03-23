@@ -3,7 +3,7 @@ title: Landing Burn Calculator (Beta)
 layout: tool
 description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
-order: 2
+order: 1
 version: v1.2
 ---
 
