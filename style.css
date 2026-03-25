@@ -71,8 +71,8 @@ a {
   position: relative; /* needed for underline */
   padding-bottom: 2px; /* space for underline */
   transition: color 0.2s ease;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 1px;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
   color: var(--text);
 }
 
