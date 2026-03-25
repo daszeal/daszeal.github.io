@@ -5,6 +5,8 @@ description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
 order: 1
 version: v1.2
+redirect_from:
+  - /tools/landing-burn-calculator-beta/
 ---
 
 <p class="caption">Version: {{ page.version }}</p>
