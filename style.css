@@ -58,6 +58,7 @@ a {
   transition: color 0.2s ease;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+  color: white;
 }
 
 a:not(.card)::after {
