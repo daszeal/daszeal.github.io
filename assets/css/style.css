@@ -166,7 +166,7 @@ footer {
 
   background:
     linear-gradient(to bottom, transparent, black),
-    url("/assets/hero.jpg");
+    url("/assets/images/hero.jpg");
 
   background-size: cover;
   background-position: center;
