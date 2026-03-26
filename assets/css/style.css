@@ -70,11 +70,11 @@ a {
   text-decoration: underline;
   position: relative;
   padding-bottom: 2px;
-  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
   color: var(--text);
-  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-decoration-color: var(--text);
 }
 
 a:not(.card)::after {
