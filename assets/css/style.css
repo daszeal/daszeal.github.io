@@ -96,6 +96,7 @@ a.no-animation::after {
 
 a.no-animation:hover {
   text-decoration-color: currentColor;
+  color: currentColor;
 }
 
 a.no-underline {
