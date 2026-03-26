@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>  
+    
+      Mass Change and Drag - Where Computers Become Necessary in Propulsive Landings | Daszeal
+    
+  </title>
+ <meta name="description" content="How I built my new landing calculator">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon2.png">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Jiang",
+  "url": "https://daszeal.github.io",
+  "sameAs": [
+    "https://x.com/ddaszeal",
+    "https://github.com/daszeal",
+    "https://instagram.com/daszeal"
+  ]
+}
+</script>
+</head>
+<header class="site-header fade-in">
+  <div class="header-inner">
+
+    <!-- LEFT: Brand -->
+    <a href="/" class="site-brand fade-in no-animation">
+      <img src="/assets/images/Logo.png" class="logo">
+    </a>
+
+    <!-- RIGHT: Nav -->
+    <nav class="site-nav">
+      <a href="/posts/">Posts</a>
+      <a href="/tools/">Tools</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<body>
+
+<main>
+  <main>
+
+
+    <h1>Mass Change and Drag - Where Computers Become Necessary in Propulsive Landings</h1>
+    <p class="date">March 03, 2026</p>
+    <div class="post-tags">
+      
+        <a href="/tags/#physics" class="tag">#physics</a>
+      
+        <a href="/tags/#rocketry" class="tag">#rocketry</a>
+      
+        <a href="/tags/#coding" class="tag">#coding</a>
+      
+    </div>
+    <article class="post-content">
+    <p>So I recently programmed a <a href="https://daszeal.github.io/tools/landing-burn-calculator-alpha/">small calculator</a> with my throttle equation derived from <a href="https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/">this post</a>, laying out the original theory that powered landings require throttle control, and <a href="https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/">this post</a>, addressing the additional distance flown during the landing due to flight path angle. This was created since repeatedly typing numbers into Desmos when playing KSP is inefficient and impractical.</p>
+
+<h3 id="testing-the-old-formula">Testing the old formula</h3>
+
+<p>I completed testing in Kerbal Space Program: first of which were vacuum tests on the Mun, yielding nominal results with the only limiting factor being how accurate my fingers can control the throttle. Corrections were needed to adjust for mass change, but only a few were actually required.</p>
+
+<div class="figure">
+  <img src="/assets/photos/LBVacSim1.png" class="post-image" />
+</div>
+
+<p>For atmospheric testing, I was too lazy for a Falcon 9-style XL-diameter rocket with boostbacks, so I just strapped together a suborbital single-stage rocket resembling the New Shepard and decided to test with that. This also eliminates the need to input values for flight path angle.</p>
+
+<div class="figure">
+  <img src="/assets/images/KSPStarhopper.png" class="post-image" />
+</div>
+
+<p>Test results were below nominal; the calculator would have a degree of error way above that shown on the Mun, with almost all tests resulting in over-throttle and re-ascent, even when multiple corrections were used.</p>
+
+<p>I attributed this error to the second limitation discussed in my <a href="https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/">first model</a>: atmospheric drag and mass change. This led me to find ways to further improve the calculator by including mass changes and drag, outlined below.</p>
+
+<h3 id="addressing-mass-change">Addressing mass change</h3>
+
+<p>Calculating mass change is relatively simple. The mass flow rate (\(\dot{m}\)) for rocket engines is given by this equation:</p>
+
+\[\dot{m} = \frac{T}{v_{exhaust}} = \frac{T}{I_{sp} g_0}\]
+
+<p>Problem is, by definition of <em>rate</em>, this only gives me how much fuel is flowing out per <em>second</em>. so I could only determine the total mass change if I figured out the total burn time.</p>
+
+<p>Now, I have purposely avoided time because including time in the calculation makes things insanely complicated, and once that’s thrown in, I need to find out the thrust needed for <em>that</em>, replug it in, find out the new mass change, repeat, and do a lot of math that would make me go crazy.</p>
+
+<p>This is where computers come in! To actually simulate the whole thing, I can use Python to simulate it. By declaring the instantaneous mass as the starting mass minus \(\dot{m}\) times the elapsed simulation time, I can get it to repeatedly simulate different throttles to find out the best one.</p>
+
+<h3 id="addressing-drag">Addressing drag</h3>
+
+<p>The effect drag has on the descent is easy to understand: drag is a force, which, when divided by the vehicle’s mass, gives acceleration. Problem is, drag is determined from velocity, air density (\(\rho\)), and the coefficient of drag (\(C_d\)):</p>
+
+\[D = \frac{1}{2} \rho C_d v^2\]
+
+<p>where</p>
+
+<ul>
+  <li>\(v\) is decreasing as the landing burn continues;</li>
+  <li>\(\rho\) increases as we hit lower parts of the atmosphere, and by a lot. If we start the landing burn at 8km we’re basically at Mount Everest levels of air density;</li>
+  <li>\(C_d\) is just hard to work with. Most rocket-shaped objects with their engines pointing down have a Cd of 0.8-1.2, but that spikes when the vehicle goes from supersonic to transonic [1][2]. This is very bad since most Falcon 9 landings happen around that band. And you can’t “calculate” it either: you can guess or you can use a wind tunnel/computational fluid dynamics.</li>
+</ul>
+
+<p>Using the same method with mass change, we can use Python to figure out the \(\rho\) at each specific height, calculate the acceleration in that moment, and repeat. Specifics are outlined below.</p>
+
+<h3 id="simulation-model">Simulation model</h3>
+
+<p>The code first simulates the atmospheric parameters based on the mode chosen by the user: vacuum mode returns no atmosphere, while Earth and Kerbin modes return their respective equations that find the air density (\(\rho\)) from inputting different altitudes.</p>
+
+\[\rho = \rho_{sea level} e^{\frac{-h}{H}}\]
+
+<p>where \(h\) is the current altitude above sea level, the input, and \(H\) is the <em>scale height</em>, or a height where the entire equation works out when put to the power of \(e\). This value is around 8.5 km for Earth and 5km for Kerbin [3].</p>
+
+<p>The simulator code is programmed to simulate the scenarios based on the current altitude, mass, and velocity of the vehicle, also keeping track of the time that’s passed (\(t_0\) is the starting point of the burn) and the total drag accumulated. After taking drag into account in the acceleration calculation,</p>
+
+\[a_{net} = \frac{T + D}{m_{instant}} - g\]
+
+<p>It will output the total change in altitude, velocity, and mass. Every 20 milliseconds, it recalculates everything based on the current scenario until the vehicle reaches an altitude of zero.</p>
+
+<p>The calculator performs binary searches by testing different throttles multiple times using the simulation declared above. Once it’s done, it will return the best throttle value it found (where the final velocity is zero when the altitude is zero), along with its burn time, final mass, average drag force across the whole simulation, and any warnings that may be present for throttles with low values or are above 100%.</p>
+
+<p>The warning system also addresses the first limitation outlined in <a href="https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/">my first post</a> on this project, creating a way for real liquid-fueled engines to use this.</p>
+
+<p>Flight path angle and the transonic drag spike are ignored due to the exponential increase in calculator complexity. For flight path angle, just eyeball it, it’ll be fine 😅</p>
+
+<h3 id="conclusion-and-limitations">Conclusion and limitations</h3>
+
+<p>As mentioned before, the remaining limitations include</p>
+
+<ul>
+  <li>How flight path angle changes landing burn distance;</li>
+  <li>Transonic drag spike for atmospheric reentry;</li>
+</ul>
+
+<p>along with</p>
+
+<ul>
+  <li>Engine thrust changes as altitude decreases.</li>
+</ul>
+
+<p>However, most of these limitations can either be eyeballed or do not have any meaningful effect on the final throttle. If the need arises to address these limitations, I will do so in the next post and version of the calculator.</p>
+
+<p>The beta version of <a href="https://daszeal.github.io/tools/landing-burn-calculator/">v1.2</a> should come out when this gets posted, along with a <a href="https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/">tutorial</a> for using it if it comes across any lost KSP players. Tests were completed with the suborbital rocket, yielding above-nominal results, including the first-ever fully constant-thrust, no-human-input soft-landing. Tests will continue until proven effective in vacuum conditions, then it will be updated to the official version.</p>
+
+<h3 id="references">References</h3>
+
+<p>[1]J. G. Leishman, “Rockets &amp; Launch Vehicle Performance,” eaglepubs.erau.edu, Jan. 2023, Available: https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/rocket-performance/</p>
+
+<p>[2]“Reddit,” Reddit.com, 2024. https://www.reddit.com/r/SpaceXLounge/comments/7xl5yp/drag_coefficient_of_falcon_9_1st_stage_in_landing/.</p>
+
+<p>[3]J. Attema and D. van der Heijden, “Kerbin” avans.github.io, 2026. https://avans.github.io/Webdictaat/showcase/ksp/planets/kerbin.html.</p>
+
+    <br>
+  </article>
+<nav class="post-nav">
+
+  
+    <a href="/2026/03/02/landing-burn-calculator-tutorial/" class="post-nav no-animation">
+      ← Last Post
+    </a>
+  
+
+  
+
+</nav>
+
+</main>
+
+</main>
+<br>
+<br>
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- LEFT -->
+    <div class="footer-profile">
+
+      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
+
+      <div class="footer-text">
+
+        <h3 class="footer-name">Peter Jiang</h3>
+
+        <p class="footer-desc">
+          Rocket enthusiast - Student - Part-time Gamer
+        </p>
+
+        <div class="footer-socials">
+
+          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
+            <img src="/assets/icons/mail.png">
+          </a>
+          
+          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
+            <img src="/assets/icons/x.png">
+          </a>
+          
+          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
+            <img src="/assets/icons/github.png">
+          </a>
+
+          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
+            <img src="/assets/icons/discord.png">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+   <!-- RIGHT -->
+    <div class="footer-legal">
+       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+
+  </div>
+
+</footer>
+<script src="/assets/js/animation.js"></script>
+
+</html>

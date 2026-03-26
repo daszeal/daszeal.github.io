@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>  
+    
+      Adding Instantaneous Flight Path Angle to the Calculation | Daszeal
+    
+  </title>
+ <meta name="description" content="How to land a rocket (better version)">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon2.png">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Jiang",
+  "url": "https://daszeal.github.io",
+  "sameAs": [
+    "https://x.com/ddaszeal",
+    "https://github.com/daszeal",
+    "https://instagram.com/daszeal"
+  ]
+}
+</script>
+</head>
+<header class="site-header fade-in">
+  <div class="header-inner">
+
+    <!-- LEFT: Brand -->
+    <a href="/" class="site-brand fade-in no-animation">
+      <img src="/assets/images/Logo.png" class="logo">
+    </a>
+
+    <!-- RIGHT: Nav -->
+    <nav class="site-nav">
+      <a href="/posts/">Posts</a>
+      <a href="/tools/">Tools</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<body>
+
+<main>
+  <main>
+
+
+    <h1>Adding Instantaneous Flight Path Angle to the Calculation</h1>
+    <p class="date">February 08, 2026</p>
+    <div class="post-tags">
+      
+        <a href="/tags/#physics" class="tag">#physics</a>
+      
+        <a href="/tags/#rocketry" class="tag">#rocketry</a>
+      
+    </div>
+    <article class="post-content">
+    <p>In my last post, we discussed the ideal landing burn equation that is based off of a spacecraft’s instantaneous velocity, height, and maximum throttle capability to cut off all vertical velocity at the moment it reaches an altitude of zero. While it presented a temporary solution to not over-throttle or under-throttle, it had its realistic limitations, which are also outlined in the article’s conclusion:</p>
+
+<ul>
+  <li>The model assumes 0-100% throttle capability, which is near impossible given current liquid-fuel engine technology.</li>
+  <li>The model ignores mass changes due to fuel consumption and atmospheric drag (when present)</li>
+  <li>The model assumes the spacecraft has minimal horizontal velocity and is pointing vertically.</li>
+</ul>
+
+<p>For the third limitation, when landing in any way, controlled or not, the spacecraft will always approach the ground with some horizontal velocity, which is paired with the vertical velocity to give the absolute velocity (the value displayed in Kerbal Space Program). What a retrograde burn does is it cuts both horizontal and landing velocity at the same rate (not by the same acceleration for each value).</p>
+
+<p>Because the spacecraft is approaching the ground at a decreasing angle (relative to the local vertical), the total distance covered by the burn will be greater than its current radar height, which we used in the last model, leading to inaccuracies.</p>
+
+<p>In this post, we will directly address that limitation by correcting our equation to include the instantaneous flight path angle when the landing burn starts and line-of-sight to the target landing location (or the downrange distance) to calculate the total distance the landing burn will cover.</p>
+
+<h3 id="model">Model</h3>
+
+<p>Due to the increased complexity of this model, we shall define a few new variables and redefine duplicates used in the last post.</p>
+
+<p>For variables in the last post,</p>
+
+<ul>
+  <li>\(∆x\), or total distance covered during descent, will be replaced by \(d\);</li>
+  <li>\(v_{initial}\) will be replaced by \(v_{burn}\) or \(v_{abs}\), defined underneath;</li>
+  <li>\(h\) will be replaced by \(h_{burn}\), denoting the spacecraft’s vertical displacement from the target landing zone.</li>
+</ul>
+
+<p>For new variables,</p>
+
+<ul>
+  <li>\(\gamma\) will stand for the angle formed by the local vertical and the spacecraft’s retrograde vector, measured in degrees. Shown with the green tangent in Figure 1.;</li>
+  <li>\(\theta\) is the angle formed by the local vertical on the spacecraft and the straight line connecting its position to its targeted landing zone. Shown with the blue angle in Figure 1.;</li>
+  <li>\(v_y\) will be the spacecraft’s vertical velocity;</li>
+  <li>\(v_x\) will be the spacecraft’s horizontal velocity;</li>
+  <li>\(v_{abs}\) will be the spacecraft’s resultant velocity;</li>
+  <li>\(x_{target}\) will be the downrange distance between the spacecraft’s position and its landing site;</li>
+  <li>\(x\) will be the spacecraft’s horizontal displacement, direction not accounted for. We shall assume that the spacecraft is at \(x=0\) at the start of the landing burn and the measurements of its conditions, and the coordinate system remains in its original position as the landing burn continues;</li>
+  <li>\(y\) will be the spacecraft’s vertical displacement;</li>
+  <li>\(d\) will be the total distance the spacecraft travels for its landing;</li>
+  <li>A subscript or description of “projected” will stand for the conditions of the spacecraft if no landing burn takes place;</li>
+  <li>A subscript or description of “powered” will stand for the conditions of the spacecraft when the landing burn takes place immediately after measurement of its conditions;</li>
+  <li>\(a\) is a trajectory curve constant used to determine the curvature of the spacecraft’s powered trajectory, explained later.</li>
+</ul>
+
+<div class="figure">
+  <img src="/assets/images/Poweredvsprojected.png" class="post-image" />
+
+  <p class="caption">
+    Figure 1
+  </p>
+</div>
+
+<p>We can model the spacecraft’s projected trajectory with a parabolic trajectory on a Cartesian plane with the \(x\) and \(y\) axes being the horizontal and vertical positions of it. The constant is the spacecraft’s altitude at the start of the landing burn, and the \(y\) value of the function’s vertex is the trajectory’s apoapsis. From comparing the horizontal and vertical velocities, we can determine that the slope of this function is the cotangent of the spacecraft’s angle.</p>
+
+\[\frac{dy}{dx} = \frac{v_y}{v_x}\]
+
+\[\gamma = tan^{-1}(\frac{v_x}{v_y})\]
+
+\[\frac{dy}{dx} = cot(\gamma)\]
+
+<p>This value will function like the graph from earlier to determine the feasibility envelope of landing at a certain site. The \(\gamma\) value must be greater than the angle to the targeted landing site (\(\theta\)), as a retrograde burn will decrease the horizontal velocity of the craft.</p>
+
+<p>We will also model the spacecraft’s powered descent using a Cartesian plane. To determine the \(d\) value, we must first determine what this function is.</p>
+
+\[y_{powered} = ax^2+bx+c\]
+
+\[y_{powered}’ = 2ax+b\]
+
+<p>Where \(a\) is the variable descent rate we have to calculate, \(b\) is the slope of the function at \(x=0\) (determined through \(cot(\gamma)\)), and \(c\) is \(h_{burn}\).</p>
+
+<p>The \(a\) value can be determined by plugging in a second coordinate, in this case being the landing site at \((x_{target},0)\).</p>
+
+\[a = \frac{y_2 - b(x_2) - c}{(x_2)^2}\]
+
+\[a = \frac{0 - cot(\gamma)(x_{target}) - h_{burn}}{(x_{target})^2}\]
+
+<p>The final variable we have to solve for it \(x_{target}\), the downrange distance to our landing zone. This can be found in a number of ways, such as radar, but can also be calculated by multiplying the altitude to the tangent of the angle to the landing site.</p>
+
+\[tan(\theta) = \frac{x_{target}}{h_{burn}}\]
+
+\[x_{target} = h_{burn}tan(\theta)\]
+
+<p>Using the formula for arc length,</p>
+
+\[L = \int_{0}^{k} \sqrt{1 + [f'(x)]^2} \, dx\]
+
+<p>We can determine the final distance traveled during the landing burn.</p>
+
+\[d = \int_{0}^{x_{target}} \sqrt{1 + (2ax+cot(\gamma))^2} \, dx\]
+
+<p>By plugging that result into the equation we derived in the earlier post,</p>
+
+<p>\(\int_{0}^{x_{target}} \sqrt{1 + (2ax+cot(\gamma))^2} \, dx = \frac{v_{burn}^2}{2(n\frac{F_{Thrust}}{m}-g}\))</p>
+
+<p>And solving for the \(n\) value, we can conclude a better throttle value for our landing burn engines.</p>
+
+<h3 id="conclusion-and-limitations">Conclusion and limitations</h3>
+
+<p>In this model, \(x_{target}\) does not have a cardinal direction, which means that the model assumes that the retrograde vector is pointing in the same direction as the landing site. However, this can be easily adjusted through the use of grid fins.</p>
+
+<p>The model still ignores the first few limitations, throttle capacity, mass change, and atmospheric drag. Future studies will be conducted to further perfect this model, including to account for torque/tumbling, center-of-mass changes, and terminal velocity.</p>
+
+<p>This model also requires the flight computer (or KSP player pausing the game) to complete a complicated calculation involving integrals near-instantaneously. An update to this specific post will suggest a closed-form solution to make the calculation simpler.</p>
+
+    <br>
+  </article>
+<nav class="post-nav">
+
+  
+    <a href="/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/" class="post-nav no-animation">
+      ← Last Post
+    </a>
+  
+
+  
+    <a href="/2026/03/02/landing-burn-calculator-tutorial/" class="post-nav no-animation">
+      Next Post →
+    </a>
+  
+
+</nav>
+
+</main>
+
+</main>
+<br>
+<br>
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- LEFT -->
+    <div class="footer-profile">
+
+      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
+
+      <div class="footer-text">
+
+        <h3 class="footer-name">Peter Jiang</h3>
+
+        <p class="footer-desc">
+          Rocket enthusiast - Student - Part-time Gamer
+        </p>
+
+        <div class="footer-socials">
+
+          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
+            <img src="/assets/icons/mail.png">
+          </a>
+          
+          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
+            <img src="/assets/icons/x.png">
+          </a>
+          
+          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
+            <img src="/assets/icons/github.png">
+          </a>
+
+          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
+            <img src="/assets/icons/discord.png">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+   <!-- RIGHT -->
+    <div class="footer-legal">
+       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+
+  </div>
+
+</footer>
+<script src="/assets/js/animation.js"></script>
+
+</html>

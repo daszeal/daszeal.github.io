@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>  
+    
+      Landing Burn Calculator | Daszeal
+    
+  </title>
+ <meta name="description" content="Calculates throttle required to land.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon2.png">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Jiang",
+  "url": "https://daszeal.github.io",
+  "sameAs": [
+    "https://x.com/ddaszeal",
+    "https://github.com/daszeal",
+    "https://instagram.com/daszeal"
+  ]
+}
+</script>
+</head>
+<header class="site-header fade-in">
+  <div class="header-inner">
+
+    <!-- LEFT: Brand -->
+    <a href="/" class="site-brand fade-in no-animation">
+      <img src="/assets/images/Logo.png" class="logo">
+    </a>
+
+    <!-- RIGHT: Nav -->
+    <nav class="site-nav">
+      <a href="/posts/">Posts</a>
+      <a href="/tools/">Tools</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<body>
+
+<main>
+  <h1>Landing Burn Calculator</h1>
+<main class="tool-container">
+    <p class="caption">Version: v1.2</p>
+
+<p>Tutorial <a href="https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/">here</a>, offline <a href="https://www.python.org/">Python</a> version available for cloning on <a href="https://github.com/daszeal/Constant-Throttle-for-Propulsive-Landing">GitHub</a>.</p>
+
+<form id="landing-form" class="tool-form">
+
+<h3>Mode</h3>
+  <div class="mode-selector">
+    <label>
+      <input type="radio" name="mode" value="vacuum" id="vacuum" required="" />
+      <span>Vacuum</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="earth" id="earth" />
+      <span>Earth</span>
+    </label>
+    <label>
+      <input type="radio" name="mode" value="kerbin" id="kerbin" />
+      <span>Kerbin</span>
+    </label>
+  </div>
+
+  <h3>Pre-launch</h3>
+  <input type="number" step="any" id="m_dry" placeholder="Dry Mass (t) *" required="" />
+  <input type="number" step="any" id="thrust_max" placeholder="Thrust (kN) *" required="" />
+  <input type="number" step="any" id="Isp" placeholder="Isp (sec) *" required="" />
+  <input type="number" step="any" id="diameter" placeholder="Rocket diameter (m)" />
+  <input type="number" step="any" id="gravity" placeholder="Gravity (m/s²)" />
+  <input type="number" step="any" id="Cd" placeholder="Coefficient of drag" />
+
+  <h3>During Landing</h3>
+  <input type="number" step="any" id="v0" placeholder="Velocity (m/s) *" required="" />
+  <input type="number" step="any" id="h0" placeholder="Altitude (m) *" required="" />
+  <input type="number" step="any" id="m0" placeholder="Current mass (t) *" required="" />
+
+  <button type="submit">Calculate</button>
+</form>
+
+<div id="result" class="tool-result"></div>
+<p><br /></p>
+
+<script src="/assets/js/landing-two.js" defer=""></script>
+
+
+</main>
+
+</main>
+<br>
+<br>
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- LEFT -->
+    <div class="footer-profile">
+
+      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
+
+      <div class="footer-text">
+
+        <h3 class="footer-name">Peter Jiang</h3>
+
+        <p class="footer-desc">
+          Rocket enthusiast - Student - Part-time Gamer
+        </p>
+
+        <div class="footer-socials">
+
+          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
+            <img src="/assets/icons/mail.png">
+          </a>
+          
+          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
+            <img src="/assets/icons/x.png">
+          </a>
+          
+          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
+            <img src="/assets/icons/github.png">
+          </a>
+
+          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
+            <img src="/assets/icons/discord.png">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+   <!-- RIGHT -->
+    <div class="footer-legal">
+       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+
+  </div>
+
+</footer>
+<script src="/assets/js/animation.js"></script>
+
+</html>

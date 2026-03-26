@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>  
+    
+      Landing Burn Throttle Calculator Tutorial | Daszeal
+    
+  </title>
+ <meta name="description" content="How to use the calculator!">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon2.png">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Jiang",
+  "url": "https://daszeal.github.io",
+  "sameAs": [
+    "https://x.com/ddaszeal",
+    "https://github.com/daszeal",
+    "https://instagram.com/daszeal"
+  ]
+}
+</script>
+</head>
+<header class="site-header fade-in">
+  <div class="header-inner">
+
+    <!-- LEFT: Brand -->
+    <a href="/" class="site-brand fade-in no-animation">
+      <img src="/assets/images/Logo.png" class="logo">
+    </a>
+
+    <!-- RIGHT: Nav -->
+    <nav class="site-nav">
+      <a href="/posts/">Posts</a>
+      <a href="/tools/">Tools</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<body>
+
+<main>
+  <main>
+
+
+    <h1>Landing Burn Throttle Calculator Tutorial</h1>
+    <p class="date">March 02, 2026</p>
+    <div class="post-tags">
+      
+        <a href="/tags/#physics" class="tag">#physics</a>
+      
+        <a href="/tags/#rocketry" class="tag">#rocketry</a>
+      
+        <a href="/tags/#tutorials" class="tag">#tutorials</a>
+      
+    </div>
+    <article class="post-content">
+    <p>Current Model: v1.2</p>
+
+<h3 id="disclaimer">Disclaimer</h3>
+<p>I disclaim all responsibility for any adverse/catastrophic consequences caused by the landing of any vehicle, real or fake, that had used any part of this program during its flight. If used, the user assumes all responsibility, so use at your own risk, especially in the real world.</p>
+
+<h3 id="assumptions-read-before-">Assumptions (READ BEFORE !!!)</h3>
+<p>We will assume you have enough fuel to land. A good rule of thumb is that if you’re traveling faster than the amount of \(\Delta v\) you have left, you’re gonna <a href="https://en.wikipedia.org/wiki/Lithobraking">lithobreak</a> at some point;
+You will throttle landing engines at that specific throttle immediately after measurement and subsequent calculation of throttle. We assume all three events (measurement, calculation, and execution) are close enough that the time between them is negligible;
+You have a 0º angle-of-attack (This means your engines are pointed directly in the direction of travel. This does NOT mean you’re nose diving, engines up).</p>
+
+<h3 id="step-1---select-mode">Step 1 - Select mode</h3>
+<p>Vacuum mode ignores drag and assumes there’s no atmosphere. Kerbin and Earth modes are different since they have different atmospheres: make sure you choose the correct one. The Earth mode is built for Earth, not the planet in Kerbal Space Program’s RSS/RO.</p>
+
+<h3 id="step-2---pre-launch">Step 2 - Pre-launch</h3>
+
+<p>Determine these things beforehand and plug them in.</p>
+
+<ul>
+  <li><strong>Maximum thrust</strong> - the total thrust of the engine(s) you’re using for landing. This may or may not be all your engines. If you’re testing in the real world, make sure you can reignite those engines after MECO;</li>
+  <li><strong>Specific impulse</strong> - the sea level \(I_{sp}\) of the engine(s) you’re planning on using for landing;</li>
+  <li><strong>Dry mass</strong> - mass of the rocket when all the tanks are empty;</li>
+  <li><strong>Diameter</strong> - of the rocket, used for aerodynamic calculation;</li>
+  <li><strong>Coefficient of drag</strong> - for most rockets that should be around 0.8-1.2 depending on how ugly your rocket is. Less aerodynamic rockets have higher \(C_d\) s. The default is 1.0. If you’re using this for a real rocket, I highly recommend finding out the exact value in a wind tunnel or using computational fluid dynamics;</li>
+  <li><strong>Gravity</strong> - of the celestial body you’re landing on. This defaults to 9.8.</li>
+</ul>
+
+<p>If you selected vacuum mode, the diameter and \(C_d\) are not required.</p>
+
+<h3 id="step-3---at-the-moment-of-engine-reignition">Step 3 - At the moment of engine reignition</h3>
+
+<p>If this is KSP, pause the game with all the displays open.</p>
+
+<p>If this is the real world, find a software engineer that can configure the flight computer to take all these values.</p>
+
+<p>Measure these values:</p>
+<ul>
+  <li><strong>Altitude</strong> - to make it as accurate as possible, make sure it’s the exact distance between the landing zone and the base of your rocket;</li>
+  <li><strong>Velocity</strong> - make sure the value is <em>at that moment</em>;</li>
+  <li><strong>Mass</strong> - including all the remaining propellant on board.</li>
+</ul>
+
+<p>Then, press the calculate button to figure out the required constant throttle to land.</p>
+
+<h3 id="step-4---understanding-the-outputs">Step 4 - Understanding the outputs</h3>
+
+<p>This should be straightforward.</p>
+
+<ul>
+  <li><strong>Throttle</strong> - the value you should throttle your current engine to;</li>
+  <li><strong>KSP Scale</strong> - this is how many little units you should cover in the KSP navball throttle display. Notice how there are 15 “units” divided into sections of 3;</li>
+  <li><strong>Burn time</strong> - self explanatory. A burn time longer than the KSP display is ok, this refers to the burn time when throttled down;</li>
+  <li><strong>Warnings</strong> - this tells you if something needs immediate attention. If the throttle value is below 40%, it will tell you that this is below what most real-life engines can throttle to. You can, of course, ignore this if you’re playing KSP. A critical warning means that you’re about to crash and there’s nothing you can do about it.</li>
+</ul>
+
+    <br>
+  </article>
+<nav class="post-nav">
+
+  
+    <a href="/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/" class="post-nav no-animation">
+      ← Last Post
+    </a>
+  
+
+  
+    <a href="/2026/03/03/Mass-Change-and-Drag-Where-Computers-Become-Necessary-in-Propulsive-Landings/" class="post-nav no-animation">
+      Next Post →
+    </a>
+  
+
+</nav>
+
+</main>
+
+</main>
+<br>
+<br>
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- LEFT -->
+    <div class="footer-profile">
+
+      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
+
+      <div class="footer-text">
+
+        <h3 class="footer-name">Peter Jiang</h3>
+
+        <p class="footer-desc">
+          Rocket enthusiast - Student - Part-time Gamer
+        </p>
+
+        <div class="footer-socials">
+
+          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
+            <img src="/assets/icons/mail.png">
+          </a>
+          
+          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
+            <img src="/assets/icons/x.png">
+          </a>
+          
+          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
+            <img src="/assets/icons/github.png">
+          </a>
+
+          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
+            <img src="/assets/icons/discord.png">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+   <!-- RIGHT -->
+    <div class="footer-legal">
+       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+
+  </div>
+
+</footer>
+<script src="/assets/js/animation.js"></script>
+
+</html>

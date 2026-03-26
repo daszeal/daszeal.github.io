@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <title>  
+    
+      Landing Burn Calculator (Alpha) | Daszeal
+    
+  </title>
+ <meta name="description" content="First released version of the landing burn calculator">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" href="/assets/images/favicon2.png">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Jiang",
+  "url": "https://daszeal.github.io",
+  "sameAs": [
+    "https://x.com/ddaszeal",
+    "https://github.com/daszeal",
+    "https://instagram.com/daszeal"
+  ]
+}
+</script>
+</head>
+<header class="site-header fade-in">
+  <div class="header-inner">
+
+    <!-- LEFT: Brand -->
+    <a href="/" class="site-brand fade-in no-animation">
+      <img src="/assets/images/Logo.png" class="logo">
+    </a>
+
+    <!-- RIGHT: Nav -->
+    <nav class="site-nav">
+      <a href="/posts/">Posts</a>
+      <a href="/tools/">Tools</a>
+      <a href="/projects/">Projects</a>
+      <a href="/about/">About</a>
+    </nav>
+
+  </div>
+</header>
+
+<body>
+
+<main>
+  <h1>Landing Burn Calculator (Alpha)</h1>
+<main class="tool-container">
+    <p><em>v1.1</em></p>
+
+<p class="about-content">This is a small calculator that takes a lot of inputs and outputs how much you should throttle to land without disintergrating.
+
+It assumes you fire immediately at the point in time when the inputs are taken. Flight path angle is taken from the local vertical (0º would be vertically up, 90º would be horizontal). Aerodynamic drag and lift are not considered, with the only conditions being vacuum or at terminal velocity. The model also assumes a 0º angle-of-attack.
+
+Forms marked with an asterisk are required. I disclaim any responsibility if you decide to use this to land a vehicle, real or fake, and it results in a RUD.
+
+Enjoy!</p>
+
+<form id="throttle-form" class="tool-form">
+
+  <input type="number" step="any" id="v" placeholder="Velocity (m/s) * " required="" />
+
+  <label class="checkbox">
+    <input type="checkbox" id="terminal_v" />
+    <span>Terminal velocity</span>
+  </label>
+
+  <input type="number" step="any" id="h" placeholder="Height (m) *" required="" />
+  <input type="number" step="any" id="g" placeholder="Gravity (m/s²) - Leave blank for 9.8" />
+  <input type="number" step="any" id="m" placeholder="Mass (t) *" required="" />
+  <input type="number" step="any" id="t" placeholder="Thrust (kN) * " required="" />
+  <input type="number" step="any" id="gamma" placeholder="Flight path angle (°)" />
+  <input type="number" step="any" id="x" placeholder="Downrange distance (m)" />
+
+  <button type="submit">Calculate throttle percentage</button>
+
+</form>
+
+<p id="result" class="tool-result"></p>
+
+<p>If that value is above 100% then expect a crash unless you have extra engines you can relight 💀💀💀</p>
+
+<p>Remember that most real-life engines have a minimum throttle range. Code is derived from <a href="https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/">this post</a> and <a href="https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/">this post</a>.</p>
+
+<p>You can also run this repeatedly to correct your throttle midair. This is usually required if you eyeball the downrange distance.</p>
+
+<script src="/assets/js/landing-burn.js"></script>
+
+
+</main>
+
+</main>
+<br>
+<br>
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <!-- LEFT -->
+    <div class="footer-profile">
+
+      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
+
+      <div class="footer-text">
+
+        <h3 class="footer-name">Peter Jiang</h3>
+
+        <p class="footer-desc">
+          Rocket enthusiast - Student - Part-time Gamer
+        </p>
+
+        <div class="footer-socials">
+
+          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
+            <img src="/assets/icons/mail.png">
+          </a>
+          
+          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
+            <img src="/assets/icons/x.png">
+          </a>
+          
+          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
+            <img src="/assets/icons/github.png">
+          </a>
+
+          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
+            <img src="/assets/icons/discord.png">
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+   <!-- RIGHT -->
+    <div class="footer-legal">
+       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
+
+  </div>
+
+</footer>
+<script src="/assets/js/animation.js"></script>
+
+</html>

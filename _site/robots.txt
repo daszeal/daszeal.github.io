@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://daszeal.github.io/sitemap.xml
