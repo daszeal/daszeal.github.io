@@ -946,10 +946,9 @@ footer {
 
 .tool-content {
   bottom: 0;
-
   background: linear-gradient(to top, black, transparent);
-
   padding: 1.rem;
+  color: var(--text);
 }
 .tool-form {
   max-width: 500px;
