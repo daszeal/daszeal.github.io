@@ -1,7 +1,18 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-<main class="tool-container">
-    {{ content }}
-</main>
+
+{% include breadcrumbs.html %}
+
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/tools/" class="back-button no-animation">← Tools</a>
+  </aside>
+
+  <div class="subpage" style="width: var(--max-width); margin: 0 auto; padding-right: 5.5rem;">
+    <h1 style="text-align: center;">{{ page.title }}</h1>
+    <main>
+        {{ content }}
+    </main>
+  </div>
+</div>

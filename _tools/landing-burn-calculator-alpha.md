@@ -1,7 +1,7 @@
 ---
-title: Landing Burn Calculator (Alpha)
+title: Landing Burn Calculator (v1.1)
 layout: tool
-description: First released version of the landing burn calculator
+description: Alpha version (archived)
 thumbnail: /assets/thumbnails/landing.png
 order: 2
 ---
@@ -39,7 +39,7 @@ Enjoy!</p>
 
 If that value is above 100% then expect a crash unless you have extra engines you can relight 💀💀💀
 
-Remember that most real-life engines have a minimum throttle range. Code is derived from [this post](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/) and [this post](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/).
+Remember that most real-life engines have a minimum throttle range. Code is derived from [this post](/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/) and [this post](/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/).
 
 You can also run this repeatedly to correct your throttle midair. This is usually required if you eyeball the downrange distance.
 

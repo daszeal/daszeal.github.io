@@ -4,40 +4,68 @@
 <html class="no-js">
 <head>
   <meta charset="UTF-8">
-  <title>  
+  <title>
     {% if page.url == "/" %}
-      {{ site.title }} 
+      {{ site.title }}
     {% else %}
       {{ page.title }} | {{ site.title }}
     {% endif %}
   </title>
- <meta name="description" content="{{ page.description | default: 'Cool stuff made by Daszeal' }}">
+  <meta name="description" content="{{ page.description | default: 'Cool stuff made by Daszeal' }}">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="icon" href="{{ '/assets/images/favicon2.png' | relative_url }}">
+  <!-- Favicon - will be swapped by JavaScript based on dark mode -->
+  <link id="favicon" rel="icon" href="{{ '/assets/images/Favicon-light.png' | relative_url }}">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    // Favicon switcher for dark/light mode
+    function updateFavicon() {
+      const favicon = document.getElementById('favicon');
+      const homeFavicon = document.getElementById('home-favicon');
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (isDark) {
+        favicon.href = '{{ '/assets/images/Favicon-dark.png' | relative_url }}';
+        if (homeFavicon) {
+          homeFavicon.src = '{{ '/assets/images/Favicon-dark.png' | relative_url }}';
+        }
+      } else {
+        favicon.href = '{{ '/assets/images/Favicon-light.png' | relative_url }}';
+        if (homeFavicon) {
+          homeFavicon.src = '{{ '/assets/images/Favicon-light.png' | relative_url }}';
+        }
+      }
+    }
+    
+    // Set favicon when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateFavicon);
+    } else {
+      updateFavicon();
+    }
+    
+    // Watch for system dark mode changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    }
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Peter Jiang",
-  "url": "https://daszeal.github.io",
-  "sameAs": [
-    "https://x.com/ddaszeal",
-    "https://github.com/daszeal",
-    "https://instagram.com/daszeal"
-  ]
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="{{ '/assets/js/animation.js' | relative_url }}"></script>
 </head>
-{% include header.html %}
-<body>
-
+<body class="preload">
 <main>
   {{ content }}
 </main>
-<br>
-<br>
+{% include footer.html %}
 </body>
 <a href="/catalog/" class="seo-title">Page Catalog</a>
-{% include footer.html %}
 </html>

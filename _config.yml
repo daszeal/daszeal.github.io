@@ -1,23 +1,19 @@
 baseurl: ""
 url: "https://daszeal.github.io"
-title: "Daszeal"
+title: "Peter"
 permalink: /:year/:month/:day/:title/
 
 collections:
   posts:
     output: true
-    
-  pics:
-    output: true
-    permalink: /pics/:name/
-
-  projects:
-    output: true
-    permalink: /projects/:name/
 
   tools:
     output: true
     permalink: /tools/:name/
+
+  tags:
+    output: true
+    permalink: /tags/:name/
 
 plugins:
   - jekyll-sitemap

@@ -3,59 +3,38 @@ layout: default
 title: Home
 permalink: /
 ---
-<!DOCTYPE html>
-<body>
-<h1 class="seo-title">
-  Daszeal's Website
-</h1>
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-typing-box">
-          <h1 class="fade-in typing-text" id="typing"></h1>
-        </div>
-        <p class="fade-in delay-1">
-          My website :)
-        </p>
+
+<body class="home-page">
+
+<div class="home-toc">
+  <aside class="toc-sidebar fade-in">
+    <ul>
+      <li><a href="/posts/">Posts</a></li>
+      <li><a href="/tools/">Tools</a></li>
+    </ul>
+  </aside>
+
+  <div class="home-content">
+    <div class="home-header">
+      <h1>Peter Jiang</h1>
+      <img id="home-favicon" class="home-favicon fade-in-delayed">
     </div>
-</section>
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">hi.</p>
 
-<section class="home-cards delay-2">
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">I’m a high school student based in Virginia.</p>
 
-  <div class="card-grid">
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">I currently use this website to document some projects and build stuff. Having a website is also rlly cool.</p>
 
-  <a href="{{ '/about/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/snow.png')">
-          <h3>About me</h3>
-          <p>The owner of this website, that is.</p>
-    </a>
-  
-  {% for post in site.posts limit:1 %}
-    <a href="{{ post.url | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/images/twrgraph.png')">
-          <h3>Latest Post</h3>
-          <p>{{ post.title }}</p>
-    </a>
-  {% endfor %}
-    
-    <a href="https://en.wikipedia.org/wiki/Help:IPA/English" class="card reveal centered">
-          <h3>Pronounce my name</h3>
-          <p>/ˈdas͡ziːl/</p>
-    </a>
-  
-    <a href="{{ '/pics/' | relative_url }}" class="card has-image reveal" style="--bg:url('/assets/photos/QM3VTOLTest.png')"> 
-          <h3>Pics</h3>
-          <p>Mostly taken by me.</p>
-    </a>
-  
-    <a class="card status-card reveal centered" href="#">
-      <h3>Status</h3>
-      <p>{{ site.data.status.text }}</p>
-    </a>
-    
-    <a class="card centered status-card reveal" href="#"> 
-      <h3>Now</h3>
-      <p>{{ site.data.now }}</p>
-    </a>
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">My scientific background is fully self-taught. Pretty much all of this website’s content will be related to astrodynamics, rocketry, or engineering.</p>
+
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">All my work is and will be licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. This means you're free to copy, redistribute, and build upon them as long as you give credit to it.</p>
+
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">If I have a project I’m working on, I will consistently update my <a href="https://x.com/ddaszeal/">X</a> and my website posts (mainly used for long-form content). For the few coding projects I do, they will all be available on my <a href="https://github.com/daszeal">GitHub</a>.</p>
+
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">You can contact me through the footer links.</p>
+
+    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">Future projects will be displayed on the home page.</p>
 
   </div>
-
-</section>
+</div>
 </body>

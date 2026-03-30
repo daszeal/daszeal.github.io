@@ -4,8 +4,7 @@ title: Mass Change and Drag - Where Computers Become Necessary in Propulsive Lan
 description: How I built my new landing calculator
 tags: [physics, rocketry, coding]
 ---
-
-So I recently programmed a [small calculator](https://daszeal.github.io/tools/landing-burn-calculator-alpha/) with my throttle equation derived from [this post](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/), laying out the original theory that powered landings require throttle control, and [this post](https://daszeal.github.io/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/), addressing the additional distance flown during the landing due to flight path angle. This was created since repeatedly typing numbers into Desmos when playing KSP is inefficient and impractical. 
+So I recently programmed a [small calculator](/tools/landing-burn-calculator-alpha/) with my throttle equation derived from [this post](/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/), laying out the original theory that powered landings require throttle control, and [this post](/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/), addressing the additional distance flown during the landing due to flight path angle. This was created since repeatedly typing numbers into Desmos when playing KSP is inefficient and impractical. 
 
 ### Testing the old formula
 
@@ -13,17 +12,23 @@ I completed testing in Kerbal Space Program: first of which were vacuum tests on
 
 <div class="figure">
   <img src="/assets/photos/LBVacSim1.png" class="post-image">
+  <p class="caption">
+  Mun test using a boilerplate probe
+  </p>
 </div>
 
 For atmospheric testing, I was too lazy for a Falcon 9-style XL-diameter rocket with boostbacks, so I just strapped together a suborbital single-stage rocket resembling the New Shepard and decided to test with that. This also eliminates the need to input values for flight path angle.
 
 <div class="figure">
   <img src="/assets/images/KSPStarhopper.png" class="post-image">
+  <p class="caption">
+  STARHOPPER
+  </p>
 </div>
 
 Test results were below nominal; the calculator would have a degree of error way above that shown on the Mun, with almost all tests resulting in over-throttle and re-ascent, even when multiple corrections were used. 
 
-I attributed this error to the second limitation discussed in my [first model](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/): atmospheric drag and mass change. This led me to find ways to further improve the calculator by including mass changes and drag, outlined below.
+I attributed this error to the second limitation discussed in my [first model](/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/): atmospheric drag and mass change. This led me to find ways to further improve the calculator by including mass changes and drag, outlined below.
 
 ### Addressing mass change
 
@@ -75,7 +80,7 @@ It will output the total change in altitude, velocity, and mass. Every 20 millis
 
 The calculator performs binary searches by testing different throttles multiple times using the simulation declared above. Once it’s done, it will return the best throttle value it found (where the final velocity is zero when the altitude is zero), along with its burn time, final mass, average drag force across the whole simulation, and any warnings that may be present for throttles with low values or are above 100%. 
 
-The warning system also addresses the first limitation outlined in [my first post](https://daszeal.github.io/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/) on this project, creating a way for real liquid-fueled engines to use this.
+The warning system also addresses the first limitation outlined in [my first post](/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/) on this project, creating a way for real liquid-fueled engines to use this.
 
 Flight path angle and the transonic drag spike are ignored due to the exponential increase in calculator complexity. For flight path angle, just eyeball it, it’ll be fine 😅
 
@@ -92,12 +97,16 @@ along with
 
 However, most of these limitations can either be eyeballed or do not have any meaningful effect on the final throttle. If the need arises to address these limitations, I will do so in the next post and version of the calculator. 
 
-The beta version of [v1.2](https://daszeal.github.io/tools/landing-burn-calculator/) should come out when this gets posted, along with a [tutorial](https://daszeal.github.io/2026/03/02/landing-burn-calculator-tutorial/) for using it if it comes across any lost KSP players. Tests were completed with the suborbital rocket, yielding above-nominal results, including the first-ever fully constant-thrust, no-human-input soft-landing. Tests will continue until proven effective in vacuum conditions, then it will be updated to the official version.
+The beta version of [v1.2](/tools/landing-burn-calculator/) should come out when this gets posted, along with a [tutorial](/2026/03/02/landing-burn-calculator-tutorial/) for using it if it comes across any lost KSP players. Tests were completed with the suborbital rocket, yielding above-nominal results, including the first-ever fully constant-thrust, no-human-input soft-landing. Tests will continue until proven effective in vacuum conditions, then it will be updated to the official version.
+
+Source code is availiable for viewing and download on my [Github](https://github.com/daszeal/Constant-Throttle-for-Propulsive-Landing).
 
 ### References
 
-[1]J. G. Leishman, “Rockets & Launch Vehicle Performance,” eaglepubs.erau.edu, Jan. 2023, Available: https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/rocket-performance/
+[1]J. G. Leishman, “Rockets & Launch Vehicle Performance,” eaglepubs.erau.edu, Jan. 2023, Available: https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/
+chapter/rocket-performance/
 
-[2]“Reddit,” Reddit.com, 2024. https://www.reddit.com/r/SpaceXLounge/comments/7xl5yp/drag_coefficient_of_falcon_9_1st_stage_in_landing/.
+[2]“Reddit,” Reddit.com, 2024. https://www.reddit.com/r/SpaceXLounge/comments/7xl5yp/
+drag_coefficient_of_falcon_9_1st_stage_in_landing/.
 
 [3]J. Attema and D. van der Heijden, “Kerbin” avans.github.io, 2026. https://avans.github.io/Webdictaat/showcase/ksp/planets/kerbin.html.

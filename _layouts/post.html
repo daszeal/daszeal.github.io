@@ -2,34 +2,43 @@
 layout: default
 ---
 
-<main>
+{% include breadcrumbs.html %}
 
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/posts/" class="back-button no-animation">← Posts</a>
+  </aside>
 
-    <h1>{{ page.title }}</h1>
-    <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
-    <div class="post-tags">
-      {% for tag in page.tags %}
-        <a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a>
-      {% endfor %}
-    </div>
-    <article class="post-content">
-    {{ content }}
-    <br>
-  </article>
+  <div class="subpage">
+    <main>
+      <h1 class="post-content">{{ page.title }}</h1>
+      <p class="date">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <a href="/tags/#{{ tag }}" class="tag">#{{ tag }}</a>
+        {% endfor %}
+      </div>
+      <article class="post-content">
+      {{ content }}
+      <br>
+    </article>
 <nav class="post-nav">
 
   {% if page.previous %}
-    <a href="{{ page.previous.url }}" class="post-nav no-animation">
+    <a href="{{ page.previous.url }}" class="post-nav no-animation nav-left">
       ← Last Post
     </a>
   {% endif %}
 
   {% if page.next %}
-    <a href="{{ page.next.url }}" class="post-nav no-animation">
+    <a href="{{ page.next.url }}" class="post-nav no-animation nav-right">
       Next Post →
     </a>
   {% endif %}
 
 </nav>
+    </main>
+  </div>
+</div>
 
 </main>

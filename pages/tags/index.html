@@ -3,24 +3,44 @@ layout: default
 title: Tags
 permalink: /tags/
 ---
-<h1>Tags</h1>
 
-<div class="tag-list">
-  {% for tag in site.tags %}
-    {% assign tag_name = tag[0] %}
-    {% assign posts = tag[1] %}
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/" class="back-button no-animation">← Home</a>
+  </aside>
 
-    <div class="tag-section" id="{{ tag_name }}">
-      <h2>#{{ tag_name }} ({{ posts | size }})</h2>
+  <div class="home-content">
+    <h1>Tags</h1>
 
-      <ul>
-        {% for post in posts %}
-          <li>
-            <small>{{ post.date | date: "%Y-%m-%d" }}</small>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </li>
+    <div class="tag-list">
+      {% assign tag_list = "" %}
+      {% for post in site.posts %}
+        {% for tag in post.tags %}
+          {% unless tag_list contains tag %}
+            {% assign tag_list = tag_list | append: tag | append: "," %}
+          {% endunless %}
         {% endfor %}
-      </ul>
+      {% endfor %}
+      
+      {% assign sorted_tags = tag_list | split: "," | sort %}
+      
+      {% for tag in sorted_tags %}
+        {% if tag != "" %}
+          {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains tag" %}
+          <div class="tag-section" id="{{ tag }}">
+            <h2>#{{ tag }} ({{ tag_posts | size }})</h2>
+
+            <ul>
+              {% for post in tag_posts %}
+                <li>
+                  <small>{{ post.date | date: "%Y-%m-%d" }}</small>
+                  <a href="{{ post.url }}" class="no-animation">{{ post.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
-  {% endfor %}
+  </div>
 </div>

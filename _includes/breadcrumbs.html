@@ -1,0 +1,31 @@
+{% if page.url != "/" %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    {% if page.collection == "posts" %}
+      <li><a href="/posts/">Posts</a></li>
+      <li class="current">{{ page.title }}</li>
+    {% elsif page.collection == "tools" %}
+      <li><a href="/tools/">Tools</a></li>
+      <li class="current">{{ page.title }}</li>
+    {% else %}
+      {% assign url_parts = page.url | split: '/' | where_exp: 'item', 'item != ""' %}
+      {% for part in url_parts %}
+        {% if forloop.last %}
+          <li class="current">{{ page.title | default: part }}</li>
+        {% else %}
+          {% if part == "posts" %}
+            <li><a href="/posts/">Posts</a></li>
+          {% elsif part == "tools" %}
+            <li><a href="/tools/">Tools</a></li>
+          {% elsif part == "tags" %}
+            <li><a href="/tags/">Tags</a></li>
+          {% elsif part == "catalog" %}
+            <li><a href="/catalog/">Catalog</a></li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </ol>
+</nav>
+{% endif %}

@@ -4,43 +4,50 @@ title: Posts
 permalink: /posts/
 ---
 
-<h1>Posts</h1>
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/" class="no-animation back-button">← Home</a>
+  </aside>
 
-<div class="search-container">
+  <div class="home-content">
+    <h1>Posts</h1>
+    <p>Writing and projects.</p>
+    <div class="search-container" style="max-width: 900px; margin: 0 0 2rem 0;">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search posts"
+        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--highlight); background: var(--bg); color: var(--text);"
+      >
+      <div id="search-results" class="no-underline"></div>
+    </div>
 
-<input
-  id="search-input"
-  type="text"
-  placeholder="Search posts"
->
+    <div class="post-grid">
 
-<div id="search-results" class="no-underline"></div>
+      {% for post in site.posts %}
+        <a href="{{ post.url }}"
+           class="card post-card reveal">
 
+          <div class="post-meta">
+            <span class="post-date">
+              {{ post.date | date: "%Y-%m-%d" }}
+            </span>
+          </div>
+
+          <h3>{{ post.title }}</h3>
+
+          <div class="post-tags">
+            {% for tag in post.tags %}
+              <span class="tag">#{{ tag }}</span>
+            {% endfor %}
+          </div>
+
+        </a>
+      {% endfor %}
+
+    </div>
+  </div>
 </div>
 
-<div class="post-grid">
-
-  {% for post in site.posts %}
-    <a href="{{ post.url }}"
-       class="card post-card reveal">
-
-      <div class="post-meta">
-        <span class="post-date">
-          {{ post.date | date: "%Y-%m-%d" }}
-        </span>
-      </div>
-
-      <h3>{{ post.title }}</h3>
-
-      <div class="post-tags">
-        {% for tag in post.tags %}
-          <span class="tag">#{{ tag }}</span>
-        {% endfor %}
-      </div>
-
-    </a>
-  {% endfor %}
-
-</div>
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="/assets/js/search.js"></script>

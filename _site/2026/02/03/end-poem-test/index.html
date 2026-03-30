@@ -2,63 +2,92 @@
 <html class="no-js">
 <head>
   <meta charset="UTF-8">
-  <title>  
+  <title>
     
-      End Poem (Test) | Daszeal
+      End Poem (Test) | Peter
     
   </title>
- <meta name="description" content="Minecraft End Credits">
+  <meta name="description" content="Minecraft End Credits">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/images/favicon2.png">
+  <!-- Favicon - will be swapped by JavaScript based on dark mode -->
+  <link id="favicon" rel="icon" href="/assets/images/Favicon-light.png">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    // Favicon switcher for dark/light mode
+    function updateFavicon() {
+      const favicon = document.getElementById('favicon');
+      const homeFavicon = document.getElementById('home-favicon');
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (isDark) {
+        favicon.href = '/assets/images/Favicon-dark.png';
+        if (homeFavicon) {
+          homeFavicon.src = '/assets/images/Favicon-dark.png';
+        }
+      } else {
+        favicon.href = '/assets/images/Favicon-light.png';
+        if (homeFavicon) {
+          homeFavicon.src = '/assets/images/Favicon-light.png';
+        }
+      }
+    }
+    
+    // Set favicon when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateFavicon);
+    } else {
+      updateFavicon();
+    }
+    
+    // Watch for system dark mode changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    }
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Peter Jiang",
-  "url": "https://daszeal.github.io",
-  "sameAs": [
-    "https://x.com/ddaszeal",
-    "https://github.com/daszeal",
-    "https://instagram.com/daszeal"
-  ]
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Peter",
+      "url": "http://localhost:4000"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="/assets/js/animation.js"></script>
 </head>
-<header class="site-header fade-in">
-  <div class="header-inner">
-
-    <!-- LEFT: Brand -->
-    <a href="/" class="site-brand fade-in no-animation">
-      <img src="/assets/images/Logo.png" class="logo">
-    </a>
-
-    <!-- RIGHT: Nav -->
-    <nav class="site-nav">
-      <a href="/posts/">Posts</a>
-      <a href="/tools/">Tools</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-    </nav>
-
-  </div>
-</header>
-
-<body>
-
+<body class="preload">
 <main>
-  <main>
+  
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    
+      <li><a href="/posts/">Posts</a></li>
+      <li class="current">End Poem (Test)</li>
+    
+  </ol>
+</nav>
 
 
-    <h1>End Poem (Test)</h1>
-    <p class="date">February 03, 2026</p>
-    <div class="post-tags">
-      
-        <a href="/tags/#other" class="tag">#other</a>
-      
-    </div>
-    <article class="post-content">
-    <p>I see the player you mean.</p>
+
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/posts/" class="back-button no-animation">← Posts</a>
+  </aside>
+
+  <div class="subpage">
+    <main>
+      <h1 class="post-content">End Poem (Test)</h1>
+      <p class="date">February 03, 2026</p>
+      <div class="post-tags">
+        
+          <a href="/tags/#other" class="tag">#other</a>
+        
+      </div>
+      <article class="post-content">
+      <p>I see the player you mean.</p>
 
 <p>PLAYERNAME?</p>
 
@@ -210,77 +239,46 @@
 
 <p>Wake up.</p>
 
-<p>-Julian Gough</p>
+<p><em>— Julian Gough</em></p>
 
-    <br>
-  </article>
+      <br>
+    </article>
 <nav class="post-nav">
 
   
 
   
-    <a href="/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/" class="post-nav no-animation">
+    <a href="/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/" class="post-nav no-animation nav-right">
       Next Post →
     </a>
   
 
 </nav>
-
-</main>
-
-</main>
-<br>
-<br>
-</body>
-<a href="/catalog/" class="seo-title">Page Catalog</a>
-<footer class="site-footer">
-
-  <div class="footer-inner">
-
-    <!-- LEFT -->
-    <div class="footer-profile">
-
-      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
-
-      <div class="footer-text">
-
-        <h3 class="footer-name">Peter Jiang</h3>
-
-        <p class="footer-desc">
-          Rocket enthusiast - Student - Part-time Gamer
-        </p>
-
-        <div class="footer-socials">
-
-          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
-            <img src="/assets/icons/mail.png">
-          </a>
-          
-          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
-            <img src="/assets/icons/x.png">
-          </a>
-          
-          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
-            <img src="/assets/icons/github.png">
-          </a>
-
-          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
-            <img src="/assets/icons/discord.png">
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-   <!-- RIGHT -->
-    <div class="footer-legal">
-       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-    </div>
-
+    </main>
   </div>
+</div>
 
+</main>
+
+</main>
+<footer class="site-footer" style="margin: 0 auto; padding: 1.5rem 1rem; border-top: 1px solid var(--highlight); text-align:center; font-size:0.9rem; width: 70%;">
+  <div style="max-width:900px; margin:0 auto;">
+    <img src="/assets/images/Faviconn.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin: 0;">
+    <p style="margin:.5rem 0; font-weight: 600;">
+      <a href="https://github.com/daszeal/daszeal.github.io">Source</a>
+    </p>
+    <p style="margin:.5rem 0;">
+      <a href="https://x.com/ddaszeal" target="_blank" rel="noopener noreferrer">X</a> ·
+      <a href="https://www.reddit.com/user/daszeal_r1" target="_blank" rel="noopener noreferrer">Reddit</a> ·
+      <a href="https://discord.com/users/daszeal" target="_blank" rel="noopener noreferrer">Discord</a> ·
+      <a href="mailto:daseal211@gmail.com">Email</a>
+    </p>
+    <p style="margin:.5rem 0;">
+      © 2026 Peter Jiang
+    </p>
+  </div>
 </footer>
 <script src="/assets/js/animation.js"></script>
-
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
 </html>

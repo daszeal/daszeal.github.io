@@ -1,5 +1,5 @@
 ---
-title: Rendezvous Phase Angle Calculator
+title: Phase Angle Calculator
 layout: tool
 description: Calculates phase angle for a targeted Hohmann transfer
 thumbnail: /assets/thumbnails/hohmann.png

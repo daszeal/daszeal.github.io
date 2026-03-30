@@ -2,158 +2,144 @@
 <html class="no-js">
 <head>
   <meta charset="UTF-8">
-  <title>  
+  <title>
     
-      Tools | Daszeal
+      Tools | Peter
     
   </title>
- <meta name="description" content="Cool stuff made by Daszeal">
+  <meta name="description" content="Cool stuff made by Daszeal">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" href="/assets/images/favicon2.png">
+  <!-- Favicon - will be swapped by JavaScript based on dark mode -->
+  <link id="favicon" rel="icon" href="/assets/images/Favicon-light.png">
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    // Favicon switcher for dark/light mode
+    function updateFavicon() {
+      const favicon = document.getElementById('favicon');
+      const homeFavicon = document.getElementById('home-favicon');
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (isDark) {
+        favicon.href = '/assets/images/Favicon-dark.png';
+        if (homeFavicon) {
+          homeFavicon.src = '/assets/images/Favicon-dark.png';
+        }
+      } else {
+        favicon.href = '/assets/images/Favicon-light.png';
+        if (homeFavicon) {
+          homeFavicon.src = '/assets/images/Favicon-light.png';
+        }
+      }
+    }
+    
+    // Set favicon when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateFavicon);
+    } else {
+      updateFavicon();
+    }
+    
+    // Watch for system dark mode changes
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    }
+  </script>
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Peter Jiang",
-  "url": "https://daszeal.github.io",
-  "sameAs": [
-    "https://x.com/ddaszeal",
-    "https://github.com/daszeal",
-    "https://instagram.com/daszeal"
-  ]
-}
-</script>
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Peter",
+      "url": "http://localhost:4000"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="/assets/js/animation.js"></script>
 </head>
-<header class="site-header fade-in">
-  <div class="header-inner">
-
-    <!-- LEFT: Brand -->
-    <a href="/" class="site-brand fade-in no-animation">
-      <img src="/assets/images/Logo.png" class="logo">
-    </a>
-
-    <!-- RIGHT: Nav -->
-    <nav class="site-nav">
-      <a href="/posts/">Posts</a>
-      <a href="/tools/">Tools</a>
-      <a href="/projects/">Projects</a>
-      <a href="/about/">About</a>
-    </nav>
-
-  </div>
-</header>
-
-<body>
-
+<body class="preload">
 <main>
-  <h1>Tools</h1>
+  <div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/" class="no-animation back-button">← Home</a>
+  </aside>
 
-<p>Some fun calculators I made.</p>
+  <div>
+    <div class="home-content">
+    <h1>Tools</h1>
 
-<div class="tools-grid">
+    <p style="text-align: left; margin-bottom: 2rem;">Some fun calculators I made. JavaScript based.</p>
+    </div>
+    <div class="tools-grid" style="padding-left: 4rem;">
 
-  
-
-  
-    <a href="/tools/landing-burn-calculator/"
-       class="card tool-card reveal no-underline">
-
-      <div class="tool-bg"
-           style="background-image:url('/assets/thumbnails/landing.png')">
-      </div>
       
-      <div class="tool-content">
-        <h3>Landing Burn Calculator</h3>
-        <p>Calculates throttle required to land.</p>
-      </div>
 
-    </a>
-  
-    <a href="/tools/landing-burn-calculator-alpha/"
-       class="card tool-card reveal no-underline">
-
-      <div class="tool-bg"
-           style="background-image:url('/assets/thumbnails/landing.png')">
-      </div>
       
-      <div class="tool-content">
-        <h3>Landing Burn Calculator (Alpha)</h3>
-        <p>First released version of the landing burn calculator</p>
-      </div>
+        <a href="/tools/landing-burn-calculator/"
+           class="card tool-card reveal no-underline">
 
-    </a>
-  
-    <a href="/tools/hohmann/"
-       class="card tool-card reveal no-underline">
-
-      <div class="tool-bg"
-           style="background-image:url('/assets/thumbnails/hohmann.png')">
-      </div>
-      
-      <div class="tool-content">
-        <h3>Rendezvous Phase Angle Calculator</h3>
-        <p>Calculates phase angle for a targeted Hohmann transfer</p>
-      </div>
-
-    </a>
-  
-
-</div>
-
-</main>
-<br>
-<br>
-</body>
-<a href="/catalog/" class="seo-title">Page Catalog</a>
-<footer class="site-footer">
-
-  <div class="footer-inner">
-
-    <!-- LEFT -->
-    <div class="footer-profile">
-
-      <img src="/assets/images/footer-photo.jpg" class="footer-photo" alt="My photo">
-
-      <div class="footer-text">
-
-        <h3 class="footer-name">Peter Jiang</h3>
-
-        <p class="footer-desc">
-          Rocket enthusiast - Student - Part-time Gamer
-        </p>
-
-        <div class="footer-socials">
-
-          <a href="mailto:daseal211@gmail.com" aria-label="Email" class="no-animation">
-            <img src="/assets/icons/mail.png">
-          </a>
+          <div class="tool-bg"
+               style="background-image:url('/assets/thumbnails/landing.png')">
+          </div>
           
-          <a href="https://x.com/ddaszeal" aria-label="X" class="no-animation">
-            <img src="/assets/icons/x.png">
-          </a>
+          <div class="tool-content">
+            <h3>Landing Burn Calculator</h3>
+            <p>Calculates throttle required to land.</p>
+          </div>
+
+        </a>
+      
+        <a href="/tools/landing-burn-calculator-alpha/"
+           class="card tool-card reveal no-underline">
+
+          <div class="tool-bg"
+               style="background-image:url('/assets/thumbnails/landing.png')">
+          </div>
           
-          <a href="https://github.com/daszeal" aria-label="GitHub" class="no-animation">
-            <img src="/assets/icons/github.png">
-          </a>
+          <div class="tool-content">
+            <h3>Landing Burn Calculator (v1.1)</h3>
+            <p>Alpha version (archived)</p>
+          </div>
 
-          <a href="https://discord.com/users/daszeal" aria-label="Discord" class="no-animation">
-            <img src="/assets/icons/discord.png">
-          </a>
+        </a>
+      
+        <a href="/tools/hohmann/"
+           class="card tool-card reveal no-underline">
 
-        </div>
+          <div class="tool-bg"
+               style="background-image:url('/assets/thumbnails/hohmann.png')">
+          </div>
+          
+          <div class="tool-content">
+            <h3>Phase Angle Calculator</h3>
+            <p>Calculates phase angle for a targeted Hohmann transfer</p>
+          </div>
 
-      </div>
+        </a>
+      
 
     </div>
-   <!-- RIGHT -->
-    <div class="footer-legal">
-       © 2026 by Peter "Daszeal" Jiang under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
-    </div>
-
   </div>
-
+</div>
+</main>
+<footer class="site-footer" style="margin: 0 auto; padding: 1.5rem 1rem; border-top: 1px solid var(--highlight); text-align:center; font-size:0.9rem; width: 70%;">
+  <div style="max-width:900px; margin:0 auto;">
+    <img src="/assets/images/Faviconn.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin: 0;">
+    <p style="margin:.5rem 0; font-weight: 600;">
+      <a href="https://github.com/daszeal/daszeal.github.io">Source</a>
+    </p>
+    <p style="margin:.5rem 0;">
+      <a href="https://x.com/ddaszeal" target="_blank" rel="noopener noreferrer">X</a> ·
+      <a href="https://www.reddit.com/user/daszeal_r1" target="_blank" rel="noopener noreferrer">Reddit</a> ·
+      <a href="https://discord.com/users/daszeal" target="_blank" rel="noopener noreferrer">Discord</a> ·
+      <a href="mailto:daseal211@gmail.com">Email</a>
+    </p>
+    <p style="margin:.5rem 0;">
+      © 2026 Peter Jiang
+    </p>
+  </div>
 </footer>
 <script src="/assets/js/animation.js"></script>
-
+</body>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
 </html>

@@ -4,28 +4,37 @@ title: Tools
 permalink: /tools/
 ---
 
-<h1>Tools</h1>
+<div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/" class="no-animation back-button">← Home</a>
+  </aside>
 
-<p>Some fun calculators I made.</p>
+  <div>
+    <div class="home-content">
+    <h1>Tools</h1>
 
-<div class="tools-grid">
+    <p style="text-align: left; margin-bottom: 2rem;">Some fun calculators I made. JavaScript based.</p>
+    </div>
+    <div class="tools-grid" style="padding-left: 4rem;">
 
-  {% assign sorted_tools = site.tools | sort: "order" %}
+      {% assign sorted_tools = site.tools | sort: "order" %}
 
-  {% for tool in sorted_tools %}
-    <a href="{{ tool.url | relative_url }}"
-       class="card tool-card reveal no-underline">
+      {% for tool in sorted_tools %}
+        <a href="{{ tool.url | relative_url }}"
+           class="card tool-card reveal no-underline">
 
-      <div class="tool-bg"
-           style="background-image:url('{{ tool.thumbnail }}')">
-      </div>
-      
-      <div class="tool-content">
-        <h3>{{ tool.title }}</h3>
-        <p>{{ tool.description }}</p>
-      </div>
+          <div class="tool-bg"
+               style="background-image:url('{{ tool.thumbnail }}')">
+          </div>
+          
+          <div class="tool-content">
+            <h3>{{ tool.title }}</h3>
+            <p>{{ tool.description }}</p>
+          </div>
 
-    </a>
-  {% endfor %}
+        </a>
+      {% endfor %}
 
+    </div>
+  </div>
 </div>

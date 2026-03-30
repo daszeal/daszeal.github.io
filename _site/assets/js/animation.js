@@ -1,104 +1,55 @@
-console.log("JS LOADED");
 document.documentElement.classList.remove("no-js");
 
-let observer = null;
-
-function setupAnimations() {
-
-  // Fade in on load
-  document.querySelectorAll(".fade-in").forEach(el => {
-    el.classList.add("visible");
+window.addEventListener("load", () => {
+  document.body.classList.remove("preload");
+  document.querySelectorAll(".card.reveal").forEach((el, i) => {
+    setTimeout(() => el.classList.add("visible"), i * 70);
   });
-
-  if (observer) observer.disconnect();
-
-  // Fallback
-  if (!("IntersectionObserver" in window)) {
-    document.querySelectorAll(".reveal").forEach(el => {
-      el.classList.add("visible");
-    });
-    return;
-  }
-
-  observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.25
-  });
-
-  document.querySelectorAll(".reveal").forEach(el => {
-    observer.observe(el);
-  });
-}
-
-// Normal load
-window.addEventListener("load", setupAnimations);
-
-// Cache restore
-window.addEventListener("pageshow", setupAnimations);
+});
 
 document.addEventListener("DOMContentLoaded", () => {
-
-  const siteHost = window.location.hostname;
-
+  const siteHost = location.hostname;
   document.querySelectorAll("a[href]").forEach(link => {
-
-    const url = new URL(link.href, window.location.origin);
-
-    // If link goes to another site
+    const url = new URL(link.href, location.origin);
     if (url.hostname !== siteHost) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
     }
-
   });
 
+  // Typing animation for h1 on homepage
+  const h1 = document.querySelector(".home-content h1");
+  if (h1) {
+    const originalText = h1.textContent;
+    h1.textContent = "";
+    h1.classList.add("typing-heading");
+    
+    // Animate the heading with typing effect
+    let charIndex = 0;
+    const typeInterval = setInterval(() => {
+      if (charIndex < originalText.length) {
+        h1.textContent += originalText[charIndex];
+        charIndex++;
+      } else {
+        clearInterval(typeInterval);
+        // After 3 seconds (when typing animation finishes), add done class
+        // This removes the border and stops blinking
+        setTimeout(() => {
+          h1.classList.add("done");
+        }, 500);
+      }
+    }, 75); // ~75ms per character for slower typing
+  }
+
+  // Typing animation for paragraphs (fast, row by row)
+  const paragraphs = document.querySelectorAll(".home-content p");
+  if (paragraphs.length > 0) {
+    paragraphs.forEach((p, index) => {
+      p.classList.add("typing-paragraph");
+      // Stagger the paragraph animations: start at 3.5s, then 50ms apart
+      setTimeout(() => {
+        p.classList.add("animate");
+      }, 1000 + (index * 50));
+    });
+  }
 });
-const words = [
-  "Daszeal",
-  "Peter Jiang",
-  "蒋睿倾",
-  "daszeal",
-  "Peter"
-];
-
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-const typeSpeed = 80;     // typing speed
-const deleteSpeed = 50;  // deleting speed
-const holdTime = 2000;   // pause after finish
-
-const el = document.getElementById("typing");
-
-function typeLoop() {
-  const word = words[wordIndex];
-
-  if (!isDeleting) {
-    el.textContent = word.slice(0, charIndex++);
-  } else {
-    el.textContent = word.slice(0, charIndex--);
-  }
-
-  let delay = isDeleting ? deleteSpeed : typeSpeed;
-
-  if (!isDeleting && charIndex === word.length + 1) {
-    delay = holdTime;
-    isDeleting = true;
-  }
-
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-  }
-
-  setTimeout(typeLoop, delay);
-}
-
-typeLoop();
