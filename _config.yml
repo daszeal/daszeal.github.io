@@ -1,5 +1,5 @@
 baseurl: ""
-url: "https://daszeal.github.io/archive/"
+url: "https://daszeal.github.io/"
 title: "Daszeal"
 permalink: /:year/:month/:day/:title/
 
