@@ -600,6 +600,13 @@ a.no-animation:hover {
   opacity: 0.5;
 }
 
+.version {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
 .figure {
   align-items: center;
   justify-content: center;

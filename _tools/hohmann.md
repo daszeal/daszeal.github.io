@@ -6,9 +6,9 @@ thumbnail: /assets/thumbnails/hohmann.png
 order: 3
 version: v1.1
 ---
-<p class="caption">Version: {{ page.version }}</p>
+<p class="version">Version: {{ page.version }}</p>
 
-<p class="caption">Warning: Tool only works for near-circular orbits with identical inclination planes. Eccentric or inclined orbits will result in larger errors in calculation.</p>
+<p class="caption">Warning: Tool only works for near-circular orbits with identical inclination planes. Eccentric or inclined orbits will result in larger errors in calculation. All forms necessary.</p>
 
 <form id="hohmann-form" class="tool-form">
 

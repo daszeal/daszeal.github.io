@@ -9,9 +9,9 @@ redirect_from:
   - /tools/landing-burn-calculator-beta/
 ---
 
-<p class="caption">Version: {{ page.version }}</p>
+<p class="version">Version: {{ page.version }}</p>
 
-Tutorial [here](2026/03/02/landing-burn-calculator-tutorial/), offline [Python](https://www.python.org/) version available for cloning on [GitHub](https://github.com/daszeal/Constant-Throttle-for-Propulsive-Landing).
+<p class ="caption">Tutorial <a href="/2026/03/02/landing-burn-calculator-tutorial/">here</a>, offline Python version available for cloning on <a href="https://github.com/daszeal/Constant-Throttle-for-Propulsive-Landing">GitHub</a>.</p>
 
 <form id="landing-form" class="tool-form">
 
