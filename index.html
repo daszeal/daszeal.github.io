@@ -2,12 +2,36 @@
 layout: default
 title: Home
 permalink: /
+body_class: home-page
+home_quotes:
+  - "Anyone can piss on the floor, it takes a real man to shit on the ceiling."
+  - "Boats are the most inefficient method of ground transportation."
+  - "Just because you're robbing a bank doesn't mean I need to burn it down."
+  - "If you don't know what to do, don't do anything."
+  - "The naked man fears no pickpocket."
+  - "Never underestimate the work efficiency of a high schooler desparate for a grade."
+  - "HAHAHAHAHHAHAHAHAHAHA"
+  - "Bed doesn't ask questions. Bed doesn't judge. Bed is warm and soft. Bed is always there for you. Bed is nice."
+  - "I may not have a brain, gentlemen, but I have an idea."
+  - "A cold toilet seat is physically uncomfortable; a warm toilet seat is mentally uncomfortable."
+  - "MOAR BOOSTERS"
+timeline:
+  - date: "Apr-Jun 2026"
+    title: "Engineering"
+    description: "Began self-teaching CAD, Arduino, and rocket engine design."
+  - date: "Mar 2026"
+    title: "Phase angle calculator"
+    description: "Released a tool that calculates the phase angle for Hohmann transfers."
+  - date: "Mar 2026"
+    title: "Open-loop landing burn calculator"
+    description: "Released the latest version for my first KSP tool."
+  - date: "Nov 2025"
+    title: "Started playing KSP"
+    description: "Learned astrodynamics and basic launch vehicle design through YouTube."
 ---
 
-<body class="home-page">
-
 <div class="home-toc">
-  <aside class="toc-sidebar fade-in">
+  <aside class="toc-sidebar">
     <ul>
       <li><a href="/posts/">Posts</a></li>
       <li><a href="/tools/">Tools</a></li>
@@ -17,24 +41,73 @@ permalink: /
   <div class="home-content">
     <div class="home-header">
       <h1>Peter Jiang</h1>
-      <img id="home-favicon" class="home-favicon fade-in-delayed">
+      <img id="home-favicon" class="home-favicon" alt="">
     </div>
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">hi.</p>
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">I’m a high school student based in Virginia.</p>
+    <section class="home-section home-intro" aria-labelledby="home-intro-title">
+      <p class="home-kicker">Hi there.</p>
+      <p class="intro-text">This website is mine, and that is very tuff.</p>
+      <p class="intro-text">It's mostly just here to document some projects every once in a while, but it's still a nice place to show others what I have completed or am intersted in.</p>
+      <p class="intro-text">I taught myself a ton of science and is working on engineering. I like spaceflight, <a href="https://www.kerbalspaceprogram.com/">Kerbal Space Program</a>, and Minecraft. Some useful calculators I built while playing KSP are in <a href="/tools/">Tools</a>, with some longer pieces of writing in <a href="/posts/">Posts</a>.</p>
+      <p class="intro-text">If I build something cool and have a lot of free time, I'll probably share it here.</p>
+    </section>
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">I currently use this website to document some projects and build stuff. Having a website is also rlly cool.</p>
+    <section class="home-section home-quote-block" aria-label="Random quote">
+      <p class="home-kicker">Random quote:</p>
+      <p id="home-random-quote" class="home-random-quote">{{ page.home_quotes | first }}</p>
+    </section>
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">My scientific background is fully self-taught. Pretty much all of this website’s content will be related to astrodynamics, rocketry, or engineering.</p>
+    <script>
+      (() => {
+        const quotes = {{ page.home_quotes | jsonify }};
+        const quote = document.getElementById("home-random-quote");
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">All my work is and will be licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. This means you're free to copy, redistribute, and build upon them as long as you give credit to it.</p>
+        if (!quote || !quotes.length) return;
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">If I have a project I’m working on, I will consistently update my <a href="https://x.com/ddaszeal/">X</a> and my website posts (mainly used for long-form content). For the few coding projects I do, they will all be available on my <a href="https://github.com/daszeal">GitHub</a>.</p>
+        quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+      })();
+    </script>
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">You can contact me through the footer links.</p>
+    {% assign latest_post = site.posts | first %}
+    {% if latest_post %}
+      <section class="home-section home-latest" aria-labelledby="latest-post-title">
+        <p class="home-kicker">Latest post</p>
+        <div class="home-latest-heading">
+          <h2 id="latest-post-title">{{ latest_post.title }}</h2>
+          <time datetime="{{ latest_post.date | date_to_xmlschema }}">{{ latest_post.date | date: "%b %-d, %Y" }}</time>
+        </div>
+        <a href="{{ latest_post.url | relative_url }}">Read →</a>
+      </section>
+    {% endif %}
 
-    <p style="max-width: 760px; line-height: 1.6; margin: 1rem 0 1rem;">Future projects will be displayed on the home page.</p>
+    {% assign visible_timeline_entries = 5 %}
+    <section class="home-section home-timeline-section" aria-labelledby="timeline-title">
+      <p class="home-kicker">Timeline</p>
+      <h2 id="timeline-title">Some milestones</h2>
+      <ol class="home-timeline">
+        {% for item in page.timeline limit: visible_timeline_entries %}
+          <li>
+            <span class="home-timeline-date">{{ item.date }}</span>
+            <div class="home-timeline-copy">
+              <h3>{{ item.title }}</h3>
+              {% if item.description %}
+                <p>{{ item.description }}</p>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
 
+    <section class="home-section home-note" aria-labelledby="license-title">
+      <h2 id="license-title">btw</h2>
+      <p>I consistently update my <a href="https://x.com/ddaszeal/">X</a> with my latest projects (or at least try my best to). Give a follow :)</p>
+    </section>
+
+    <div class="home-ascii" aria-hidden="true">
+      <span>                 o/                 </span>
+      <span>                /|                  </span>
+      <span>_______________ /_\ ________________</span>
+    </div>
   </div>
 </div>
-</body>

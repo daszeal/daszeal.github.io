@@ -1,8 +1,9 @@
 ---
 title: Phase Angle Calculator
 layout: tool
-description: Calculates phase angle for a targeted Hohmann transfer
+description: Calculates phase angle for a targeted Hohmann transfer.
 thumbnail: /assets/thumbnails/hohmann.png
+tool_bg_effect: bg-translate-down
 order: 3
 version: v1.1
 ---

@@ -1,45 +1,34 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     
-      End Poem (Test) | Peter
+      End Poem (Test) / Peter Jiang
     
   </title>
   <meta name="description" content="Minecraft End Credits">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- Favicon - will be swapped by JavaScript based on dark mode -->
   <link id="favicon" rel="icon" href="/assets/images/Favicon-light.png">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
-    // Favicon switcher for dark/light mode
     function updateFavicon() {
       const favicon = document.getElementById('favicon');
       const homeFavicon = document.getElementById('home-favicon');
       const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      if (isDark) {
-        favicon.href = '/assets/images/Favicon-dark.png';
-        if (homeFavicon) {
-          homeFavicon.src = '/assets/images/Favicon-dark.png';
-        }
-      } else {
-        favicon.href = '/assets/images/Favicon-light.png';
-        if (homeFavicon) {
-          homeFavicon.src = '/assets/images/Favicon-light.png';
-        }
-      }
+      const darkIcon = '/assets/images/Favicon-dark.png';
+      const lightIcon = '/assets/images/Favicon-light.png';
+
+      if (favicon) favicon.href = isDark ? darkIcon : lightIcon;
+      if (homeFavicon) homeFavicon.src = isDark ? darkIcon : lightIcon;
     }
-    
-    // Set favicon when DOM is ready
+
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', updateFavicon);
     } else {
       updateFavicon();
     }
-    
-    // Watch for system dark mode changes
+
     if (window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
     }
@@ -48,14 +37,15 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Peter",
+      "name": "Peter Jiang",
       "url": "http://localhost:4000"
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <script src="/assets/js/animation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 </head>
 <body class="preload">
 <main>
@@ -78,15 +68,14 @@
   </aside>
 
   <div class="subpage">
-    <main>
-      <h1 class="post-content">End Poem (Test)</h1>
-      <p class="date">February 03, 2026</p>
-      <div class="post-tags">
-        
-          <a href="/tags/#other" class="tag">#other</a>
-        
-      </div>
-      <article class="post-content">
+    <h1>End Poem (Test)</h1>
+    <p class="date">February 03, 2026</p>
+    <div class="post-tags">
+      
+        <a href="/tags/#other" class="tag">#other</a>
+      
+    </div>
+    <article class="post-content">
       <p>I see the player you mean.</p>
 
 <p>PLAYERNAME?</p>
@@ -241,44 +230,31 @@
 
 <p><em>— Julian Gough</em></p>
 
-      <br>
     </article>
-<nav class="post-nav">
-
-  
-
-  
-    <a href="/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/" class="post-nav no-animation nav-right">
-      Next Post →
-    </a>
-  
-
-</nav>
-    </main>
+    <nav class="post-nav">
+      
+      
+        <a href="/2026/03/02/landing-burn-calculator-tutorial/" class="no-animation nav-right">Next Post →</a>
+      
+    </nav>
   </div>
 </div>
-
 </main>
-
-</main>
-<footer class="site-footer" style="margin: 0 auto; padding: 1.5rem 1rem; border-top: 1px solid var(--highlight); text-align:center; font-size:0.9rem; width: 70%;">
-  <div style="max-width:900px; margin:0 auto;">
-    <img src="/assets/images/Faviconn.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin: 0;">
-    <p style="margin:.5rem 0; font-weight: 600;">
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="/assets/images/Faviconn.png" alt="Logo" class="footer-logo">
+    <p class="footer-source">
       <a href="https://github.com/daszeal/daszeal.github.io">Source</a>
     </p>
-    <p style="margin:.5rem 0;">
+    <p class="footer-links">
       <a href="https://x.com/ddaszeal" target="_blank" rel="noopener noreferrer">X</a> ·
       <a href="https://www.reddit.com/user/daszeal_r1" target="_blank" rel="noopener noreferrer">Reddit</a> ·
       <a href="https://discord.com/users/daszeal" target="_blank" rel="noopener noreferrer">Discord</a> ·
       <a href="mailto:daseal211@gmail.com">Email</a>
     </p>
-    <p style="margin:.5rem 0;">
-      © 2026 Peter Jiang
-    </p>
+    <p class="footer-legal">© 2026 Peter Jiang</p>
   </div>
 </footer>
-<script src="/assets/js/animation.js"></script>
-</body>
 <a href="/catalog/" class="seo-title">Page Catalog</a>
+</body>
 </html>

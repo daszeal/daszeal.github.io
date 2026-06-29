@@ -1,6 +1,6 @@
 baseurl: ""
 url: "https://daszeal.github.io"
-title: "Peter"
+title: "Peter Jiang"
 permalink: /:year/:month/:day/:title/
 
 collections:
@@ -10,10 +10,6 @@ collections:
   tools:
     output: true
     permalink: /tools/:name/
-
-  tags:
-    output: true
-    permalink: /tags/:name/
 
 plugins:
   - jekyll-sitemap

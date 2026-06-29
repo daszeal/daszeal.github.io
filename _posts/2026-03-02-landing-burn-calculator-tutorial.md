@@ -2,20 +2,24 @@
 layout: post
 title: Landing Burn Throttle Calculator Tutorial
 description: How to use the calculator!
-tags: [physics, rocketry, tutorials]
+tags: [physics, rockets, tutorials]
 ---
-<p>Current Model: v1.2</p>
+
+Access v1.2 calculator [here](/tools/landing-burn-calculator)
 
 ### Disclaimer
 I disclaim all responsibility for any adverse/catastrophic consequences caused by the landing of any vehicle, real or fake, that had used any part of this program during its flight. If used, the user assumes all responsibility, so use at your own risk, especially in the real world.
 
+### Disclaimer No. 2
+I built this calculator for Kerbal Space Program simply because it's easy to use: closed-loop control is not possible, and pausing the game to access all your spacecraft's info is easy. Precision landing is not considered; after all, there are quite a lot of flat places to land on in KSP. This is somewhat like predictive control but also not. If you attempt to use this code for any closed-loop system stuff will probably break.
+
 ### Assumptions (READ BEFORE !!!)
-We will assume you have enough fuel to land. A good rule of thumb is that if you’re traveling faster than the amount of $$\Delta v$$ you have left, you’re gonna [lithobreak](https://en.wikipedia.org/wiki/Lithobraking) at some point;
-You will throttle landing engines at that specific throttle immediately after measurement and subsequent calculation of throttle. We assume all three events (measurement, calculation, and execution) are close enough that the time between them is negligible;
+We will assume you have enough fuel to land. A good rule of thumb is that if you’re traveling faster than the amount of $$\Delta v$$ you have left, you’re gonna [lithobreak](https://en.wikipedia.org/wiki/Lithobraking) at some point.
+You will throttle landing engines at that specific throttle immediately after measurement and subsequent calculation of throttle. We assume all three events (measurement, calculation, and execution) are close enough that the time between them is negligible.
 You have a 0º angle-of-attack (This means your engines are pointed directly in the direction of travel. This does NOT mean you’re nose diving, engines up).
 
 ### Step 1 - Select mode
-Vacuum mode ignores drag and assumes there’s no atmosphere. Kerbin and Earth modes are different since they have different atmospheres: make sure you choose the correct one. The Earth mode is built for Earth, not the planet in Kerbal Space Program’s RSS/RO.
+Vacuum mode ignores drag and assumes there’s no atmosphere. Kerbin and Earth modes are different since they have different atmospheres: make sure you choose the correct one. 
 
 ### Step 2 - Pre-launch
 
@@ -34,8 +38,6 @@ If you selected vacuum mode, the diameter and $$C_d$$ are not required.
 
 If this is KSP, pause the game with all the displays open. 
 
-If this is the real world, find a software engineer that can configure the flight computer to take all these values. 
-
 Measure these values:
 - **Altitude** - to make it as accurate as possible, make sure it’s the exact distance between the landing zone and the base of your rocket;
 - **Velocity** - make sure the value is *at that moment*;
@@ -49,5 +51,5 @@ This should be straightforward.
 
 - **Throttle** - the value you should throttle your current engine to;
 - **KSP Scale** - this is how many little units you should cover in the KSP navball throttle display. Notice how there are 15 “units” divided into sections of 3;
-- **Burn time** - self explanatory. A burn time longer than the KSP display is ok, this refers to the burn time when throttled down;
-- **Warnings** - this tells you if something needs immediate attention. If the throttle value is below 40%, it will tell you that this is below what most real-life engines can throttle to. You can, of course, ignore this if you’re playing KSP. A critical warning means that you’re about to crash and there's nothing you can do about it.
+- **Burn time** - self explanatory. A burn time longer than the KSP stage information display is ok, since this refers to the burn time when throttled down;
+- **Warnings** - this tells you if something needs immediate attention. If the throttle value is below 40%, it will tell you that this is below what most real-life engines can throttle to. You can, of course, ignore this if you’re playing KSP with no Realism Overhaul. A critical warning means that you’re about to crash and there's nothing you can do about it.

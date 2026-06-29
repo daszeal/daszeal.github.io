@@ -1,8 +1,9 @@
 ---
-title: Landing Burn Calculator
+title: Open Loop Landing Burn Calculator
 layout: tool
 description: Calculates throttle required to land.
 thumbnail: /assets/thumbnails/landing.png
+tool_bg_effect: bg-translate-down
 order: 1
 version: v1.2
 redirect_from:

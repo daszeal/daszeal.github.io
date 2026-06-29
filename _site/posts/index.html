@@ -1,45 +1,34 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html class="no-js" lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
     
-      Posts | Peter
+      Posts / Peter Jiang
     
   </title>
   <meta name="description" content="Cool stuff made by Daszeal">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- Favicon - will be swapped by JavaScript based on dark mode -->
   <link id="favicon" rel="icon" href="/assets/images/Favicon-light.png">
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <script>
-    // Favicon switcher for dark/light mode
     function updateFavicon() {
       const favicon = document.getElementById('favicon');
       const homeFavicon = document.getElementById('home-favicon');
       const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
-      if (isDark) {
-        favicon.href = '/assets/images/Favicon-dark.png';
-        if (homeFavicon) {
-          homeFavicon.src = '/assets/images/Favicon-dark.png';
-        }
-      } else {
-        favicon.href = '/assets/images/Favicon-light.png';
-        if (homeFavicon) {
-          homeFavicon.src = '/assets/images/Favicon-light.png';
-        }
-      }
+      const darkIcon = '/assets/images/Favicon-dark.png';
+      const lightIcon = '/assets/images/Favicon-light.png';
+
+      if (favicon) favicon.href = isDark ? darkIcon : lightIcon;
+      if (homeFavicon) homeFavicon.src = isDark ? darkIcon : lightIcon;
     }
-    
-    // Set favicon when DOM is ready
+
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', updateFavicon);
     } else {
       updateFavicon();
     }
-    
-    // Watch for system dark mode changes
+
     if (window.matchMedia) {
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
     }
@@ -48,14 +37,15 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "Peter",
+      "name": "Peter Jiang",
       "url": "http://localhost:4000"
     }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <script src="/assets/js/animation.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
 </head>
 <body class="preload">
 <main>
@@ -67,127 +57,42 @@
   <div class="home-content">
     <h1>Posts</h1>
     <p>Writing and projects.</p>
-    <div class="search-container" style="max-width: 900px; margin: 0 0 2rem 0;">
-      <input
-        id="search-input"
-        type="text"
-        placeholder="Search posts"
-        style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid var(--highlight); background: var(--bg); color: var(--text);"
-      >
+
+    <div class="search-container">
+      <input id="search-input" type="text" placeholder="Search posts">
       <div id="search-results" class="no-underline"></div>
     </div>
 
     <div class="post-grid">
-
       
-        <a href="/2026/03/03/Mass-Change-and-Drag-Where-Computers-Become-Necessary-in-Propulsive-Landings/"
-           class="card post-card reveal">
-
+        <a href="/2026/03/02/landing-burn-calculator-tutorial/" class="card post-card reveal">
           <div class="post-meta">
-            <span class="post-date">
-              2026-03-03
-            </span>
+            <span class="post-date">2026-03-02</span>
           </div>
-
-          <h3>Mass Change and Drag - Where Computers Become Necessary in Propulsive Landings</h3>
-
-          <div class="post-tags">
-            
-              <span class="tag">#physics</span>
-            
-              <span class="tag">#rocketry</span>
-            
-              <span class="tag">#coding</span>
-            
-          </div>
-
-        </a>
-      
-        <a href="/2026/03/02/landing-burn-calculator-tutorial/"
-           class="card post-card reveal">
-
-          <div class="post-meta">
-            <span class="post-date">
-              2026-03-02
-            </span>
-          </div>
-
           <h3>Landing Burn Throttle Calculator Tutorial</h3>
-
           <div class="post-tags">
             
               <span class="tag">#physics</span>
             
-              <span class="tag">#rocketry</span>
+              <span class="tag">#rockets</span>
             
               <span class="tag">#tutorials</span>
             
           </div>
-
         </a>
       
-        <a href="/2026/02/08/Adding-Instantaneous-Flight-Path-Angle-to-the-Calculation/"
-           class="card post-card reveal">
-
+        <a href="/2026/02/03/end-poem-test/" class="card post-card reveal">
           <div class="post-meta">
-            <span class="post-date">
-              2026-02-08
-            </span>
+            <span class="post-date">2026-02-03</span>
           </div>
-
-          <h3>Adding Instantaneous Flight Path Angle to the Calculation</h3>
-
-          <div class="post-tags">
-            
-              <span class="tag">#physics</span>
-            
-              <span class="tag">#rocketry</span>
-            
-          </div>
-
-        </a>
-      
-        <a href="/2026/02/06/A-Kinematic-Analysis-of-Throttle-controlled-Powered-Landings/"
-           class="card post-card reveal">
-
-          <div class="post-meta">
-            <span class="post-date">
-              2026-02-06
-            </span>
-          </div>
-
-          <h3>A Kinematic Analysis of Throttle-controlled Powered Landings</h3>
-
-          <div class="post-tags">
-            
-              <span class="tag">#physics</span>
-            
-              <span class="tag">#rocketry</span>
-            
-          </div>
-
-        </a>
-      
-        <a href="/2026/02/03/end-poem-test/"
-           class="card post-card reveal">
-
-          <div class="post-meta">
-            <span class="post-date">
-              2026-02-03
-            </span>
-          </div>
-
           <h3>End Poem (Test)</h3>
-
           <div class="post-tags">
             
               <span class="tag">#other</span>
             
           </div>
-
         </a>
       
-
     </div>
   </div>
 </div>
@@ -195,24 +100,21 @@
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="/assets/js/search.js"></script>
 </main>
-<footer class="site-footer" style="margin: 0 auto; padding: 1.5rem 1rem; border-top: 1px solid var(--highlight); text-align:center; font-size:0.9rem; width: 70%;">
-  <div style="max-width:900px; margin:0 auto;">
-    <img src="/assets/images/Faviconn.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin: 0;">
-    <p style="margin:.5rem 0; font-weight: 600;">
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="/assets/images/Faviconn.png" alt="Logo" class="footer-logo">
+    <p class="footer-source">
       <a href="https://github.com/daszeal/daszeal.github.io">Source</a>
     </p>
-    <p style="margin:.5rem 0;">
+    <p class="footer-links">
       <a href="https://x.com/ddaszeal" target="_blank" rel="noopener noreferrer">X</a> ·
       <a href="https://www.reddit.com/user/daszeal_r1" target="_blank" rel="noopener noreferrer">Reddit</a> ·
       <a href="https://discord.com/users/daszeal" target="_blank" rel="noopener noreferrer">Discord</a> ·
       <a href="mailto:daseal211@gmail.com">Email</a>
     </p>
-    <p style="margin:.5rem 0;">
-      © 2026 Peter Jiang
-    </p>
+    <p class="footer-legal">© 2026 Peter Jiang</p>
   </div>
 </footer>
-<script src="/assets/js/animation.js"></script>
-</body>
 <a href="/catalog/" class="seo-title">Page Catalog</a>
+</body>
 </html>

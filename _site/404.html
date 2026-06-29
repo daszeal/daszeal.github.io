@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <meta charset="utf-8">
-  <title>Redirecting&hellip;</title>
-  <link rel="canonical" href="http://localhost:4000/">
-  <script>location="http://localhost:4000/"</script>
-  <meta http-equiv="refresh" content="0; url=http://localhost:4000/">
-  <meta name="robots" content="noindex">
-  <h1>Redirecting&hellip;</h1>
-  <a href="http://localhost:4000/">Click here if you are not redirected.</a>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+      404 / Peter Jiang
+    
+  </title>
+  <meta name="description" content="Cool stuff made by Daszeal">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link id="favicon" rel="icon" href="/assets/images/Favicon-light.png">
+  <script>
+    function updateFavicon() {
+      const favicon = document.getElementById('favicon');
+      const homeFavicon = document.getElementById('home-favicon');
+      const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const darkIcon = '/assets/images/Favicon-dark.png';
+      const lightIcon = '/assets/images/Favicon-light.png';
+
+      if (favicon) favicon.href = isDark ? darkIcon : lightIcon;
+      if (homeFavicon) homeFavicon.src = isDark ? darkIcon : lightIcon;
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateFavicon);
+    } else {
+      updateFavicon();
+    }
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Peter Jiang",
+      "url": "http://localhost:4000"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body class="preload">
+<main>
+  <div class="home-toc">
+  <aside class="toc-sidebar">
+    <a href="/" class="back-button no-animation">← Home</a>
+  </aside>
+
+  <div class="subpage">
+    <h1>404</h1>
+    <article class="post-content">
+      Page not found &#128557; 
+      
+      Please flush urself with a toilet and try again.
+    </article>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="/assets/images/Faviconn.png" alt="Logo" class="footer-logo">
+    <p class="footer-source">
+      <a href="https://github.com/daszeal/daszeal.github.io">Source</a>
+    </p>
+    <p class="footer-links">
+      <a href="https://x.com/ddaszeal" target="_blank" rel="noopener noreferrer">X</a> ·
+      <a href="https://www.reddit.com/user/daszeal_r1" target="_blank" rel="noopener noreferrer">Reddit</a> ·
+      <a href="https://discord.com/users/daszeal" target="_blank" rel="noopener noreferrer">Discord</a> ·
+      <a href="mailto:daseal211@gmail.com">Email</a>
+    </p>
+    <p class="footer-legal">© 2026 Peter Jiang</p>
+  </div>
+</footer>
+<a href="/catalog/" class="seo-title">Page Catalog</a>
+</body>
 </html>
